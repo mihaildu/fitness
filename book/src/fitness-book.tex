@@ -1,0 +1,22 @@
+% openany makes chapters start on even pages too
+\documentclass[openany]{book}
+
+% sets margins of text inside page to 1 inch
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+% this will indent the first paragraph in a chapter
+\usepackage{indentfirst}
+
+\title{
+  Introduction to Fitness \\
+  \hfill \\
+  \small A Technical Book on Fitness}
+\author{Mihail Dunaev}
+\date{}
+
+\begin{document}
+  \maketitle
+  \tableofcontents
+  \chapter{Introduction}
+  Hello World!
+\end{document}
