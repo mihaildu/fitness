@@ -33,10 +33,10 @@
 	into fitness was my weight: I was fat. Multiple times in my life. First, growing up as a kid I was fat and I managed to lose the weight in 
 	secondary school just by eating less. Second time I got fat was in university, just because I lacked any motivation to study for exams and would
 	power my way through with food and energy drinks. After uni I found it much harder to lose weight than I previously knew. I would follow a lot 
-	of diets (keto\footnote{\href{https://en.wikipedia.org/wiki/Ketogenic_diet}{Ketogenic Diet}}, food replacement like 
-	soylent\footnote{\href{https://en.wikipedia.org/wiki/Soylent_(meal_replacement)}{Soylent}} or huel\footnote{\href{https://en.wikipedia.org/wiki/Huel}
-	{Huel}}), sometimes going really low in calories intake, feeling like I have no energy and gaining the weight back on after ending the diet. I 
-	needed a better solution to this: I decided to start going to the gym.
+	of diets (keto\footnote{\href{https://en.wikipedia.org/wiki/Ketogenic_diet}{Ketogenic Diet on Wikipedia}}, food replacement like 
+	soylent\footnote{\href{https://en.wikipedia.org/wiki/Soylent_(meal_replacement)}{Soylent on Wikipedia}} or 
+	huel\footnote{\href{https://en.wikipedia.org/wiki/Huel}{Huel on Wikipedia}}), sometimes going really low in calories intake, feeling like I 
+	have no energy and gaining the weight back on after ending the diet. I needed a better solution to this: I decided to start going to the gym.
 	
 	I guess my goal was to build muscle and lose fat. I've always liked muscles as a kid, just never got the time to look into it and start
 	working out. This was my chance. I had a lot of questions: how do I train? What do I eat? Are there other things I need to pay attention to?
@@ -63,8 +63,8 @@
 	my best to present information in an unbiased way, presenting what people think works and what not, what I tried on myself etc. If you think 
 	something is wrong or don't agree with some of the information presented here, this is an open source book so feel free to submit a 
 	PR!\footnote{\href{https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/about-pull-requests}
-	{Pull Request}} At the end of the day I am a practical person, I only believe in results and what works in real life. I can say that the 
-	information I describe in this book worked really well on me, as you can see in the picture below.
+	{About Pull Requests on Github Docs}} At the end of the day I am a practical person, I only believe in results and what works in real life. 
+	I can say that the information I describe in this book worked really well on me, as you can see in the picture below.
 	
 	\begin{figure}[h]
 		\centering
@@ -73,4 +73,66 @@
 		\label{fig1}
 	\end{figure}
 	
+	
+  \chapter{Nutrition}
+  
+  	\section{Calories, BMR, TDEE}
+  	
+	I feel like I need to explain how food works first before anything else. Your body is an energy convertor. It gets energy from food\footnote{\href{https://en.wikipedia.org/wiki/Food_energy}{Food Energy on Wikipedia}} and converts it to heat, movement (kinetic energy) and 
+	electrical energy for thinking. The amount of energy needed without movement (so for heat, thinking and perhaps others things too) is referred 
+	to as basal metabolic rate or BMR\footnote{\href{https://en.wikipedia.org/wiki/Basal_metabolic_rate}{Basal Metabolic Rate on Wikipedia}} and it
+	doesn't change much from day to day. If you include the energy for movement too you get your total daily energy expenditure or TDEE. If you eat
+	more than your TDEE in a day, the extra food will be stored on your body either as fat or muscle. If you eat less then your body will have to go
+	to fat stores and muscles and break them down to get the extra food energy you need. Energy is measured in $kcal$, but most of the time you will
+	only see the term calorie with the same meaning (basically $kcal$ is the scientific term which was replaced by calorie when it started being used
+	by food industries). To put energy values into perspective, the average human would need 2,000 calories for heat every day, or so I've seen in a
+	physics course a long time ago. If I run on the treadmill for 1h I get a message that I burned roughly 600 calories. 1 Big Mac\footnote{\href{
+	https://www.mcdonalds.com/us/en-us/product/big-mac.html}{Big Mac on US McDonalds Website}} has almost 600 calories. It's important to
+	understand that knowing exactly how many calories a meal has is next to impossible. There will always be small differences in every ingredient you
+	use. For example not all loafs of bread are the same size, not all strawberries contain the same amount of sugar and so on. It's also impossible to
+	know exactly how much energy you burn in a day. However, estimates work really well in practice. As long as you eat the same meals every week, you 
+	will either lose, gain or maintain weight.
+	
+	People have tried to come up with formulas to compute BMR from different factors, such as height, age, sex or body fat percentage (this is just
+	the proportion of fat you have in your body relative to your whole mass, so 100 $\times$ fat mass / body mass). At first only mass (m), height (h) 
+	and age were taken into account in Harris-Benedict formula for BMR from 1919\footnote{\href{
+	https://en.wikipedia.org/wiki/Harris\%E2\%80\%93Benedict_equation}{Harris-Benedict on Wikipedia}}
+	\begin{equation}
+		BMR = 13.7516m + 5.0033h + 66.4730
+	\end{equation}
+  	This formula was later revised in 1984 with just a few minor changes. Later in 1990 Mifflin St Jeor\footnote{\href{https://pubmed.ncbi.nlm.nih.gov/2305711/}{A new predictive equation for resting energy expenditure in healthy individuals (1990)}} came with 2 formulas for BMR, one for men (\ref{males}) and one for women (\ref{females}).
+	\begin{equation}
+		\label{males}
+		BMR (males) = 10m + 6.25h - 5a + 5
+	\end{equation}
+	\begin{equation}
+		\label{females}
+		BMR (females) = 10m + 6.25h - 5a - 161
+	\end{equation}
+	Finally Katch-McArdle\footnote{\href{https://books.google.co.uk/books/about/Essentials_of_Exercise_Physiology.html?id=L4aZIDbmV3oC}{Essentials of Exercise Physiology Book by Katch \& McArdle (2006)}} included body fat percentage (f) into the equation, removing age and height
+	\begin{equation}
+		BMR = 370 + (21.6m (1 - \frac{f}{100}))
+	\end{equation}
+	Let's take an example using the last formula: if you weight $70kg$ and your body fat percentage is $18\%$ then your BMR should be $370 + (21.6 \times 70 \times (1 - 18/100)) = 1609.84$ calories. Add your movement energy to this and you get your TDEE. I haven't spent the time trying to derive how to
+	compute this one (e.g. from kinetic energy) because all of these formulas are great but at the end of the day they are just for your orientation.
+	The best way to compute your TDEE is to actually measure it: without changing your habits, eat 2,000 calories every day for 1-2 weeks. Weight
+	yourself every day: does your weight change? If no then it's safe to assume your TDEE is 2,000 calories. Does your weight go up? It probably means
+	your TDEE is lower. Keep adjusting your calories intake until you find your TDEE. 
+	
+	In theory you should be able to tell your TDEE without having
+	to change your diet again just by looking at how much weight you gained / lost in the initial 1-2 weeks: you should lose 1lb (or 0.45kg) of mass at 
+	a total deficit of 3500 calories\footnote{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2376744/}{What is the Required Energy Deficit per 
+	unit Weight Loss? (2008)}}. Let's take an example again: you ate 2,000 calories for 2 weeks. During these 2 weeks you gained 2.2lbs (or 1kg) on the
+	scale. According to the 3500 rule, you were at a total surplus of $3500 \times 2.2 = 7700$ calories. This surplus was achieved in 14 days, so the
+	surplus each day was 550 calories. This means your actual TDEE is 2,550 calories. However I found this rule to not work on me, trying to adjust 
+	accordingly didn't put me at maintenance and I kept changing weight. As long as you always adjust to results you will be fine. I would personally
+	start with an online TDEE calculator\footnote{\href{https://tdeecalculator.net/}{Example of online TDEE calculator}} (there are plenty out there) 
+	just to get a value to work with, then keep adjusting intake until I hit my maintenance.
+	
+	
+	\section{Body Fat Percentage}
+	
+	Some info on body fat percentage
+	
+  	
 \end{document}
