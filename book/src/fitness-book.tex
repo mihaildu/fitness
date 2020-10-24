@@ -113,6 +113,8 @@
 	\begin{equation}
 		BMR = 370 + (21.6m (1 - \frac{f}{100}))
 	\end{equation}
+	This is an interesting point because body fat percentage does affect how many calories you burn even at rest. The rule I know is that 10 pounds of muscle would burn 50 kcal in a day at rest, while 10 pounds of fat will only burn 20 kcal\footnote{\href{https://www.webmd.com/diet/obesity/features/8-ways-to-burn-calories-and-fight-fat}{An article on WebMD}} (less than half), so if you're 80kg with 15\% body fat you will burn more calories at rest than someone who is 80kg with 20\% body fat. This also explains the Mifflin St Jeor above, since women have naturally more fat than men. 
+	
 	Let's take an example using the last formula: if you weight $70kg$ and your body fat percentage is $18\%$ then your BMR should be $370 + (21.6 \times 70 \times (1 - 18/100)) = 1609.84$ calories. Add your movement energy to this and you get your TDEE. I haven't spent the time trying to derive how to
 	compute this one (e.g. from kinetic energy) because all of these formulas are great but at the end of the day they are just for your orientation.
 	The best way to compute your TDEE is to actually measure it: without changing your habits, eat 2,000 calories every day for 1-2 weeks. Weight
@@ -132,7 +134,33 @@
 	
 	\section{Body Fat Percentage}
 	
-	Some info on body fat percentage
+	Body fat percentage is discussed a lot in fitness because it affects how you look. Fat is something that is stored on your body between skin and muscles. The more fat you have on you the less visible your muscles will be. However, just taking the absolute value of fat mass is not a good indicator of how well your muscles are showing, since taller people will have more fat mass but more body surface to spread it across. So instead we can look at the proportion of fat in relation to muscles. The body fat percentage will normally dictate certain features you can see on your body, for example the average guy will have his abdominal muscles ("abs") showing around 10-14\% body fat\footnote{\href{https://www.healthline.com/health/body-fat-percentage-for-abs}{Healthline Article on Abs}}. To better understand what I'm talking about look at the image below that I found on builtlean.com\footnote{\href{https://www.builtlean.com/body-fat-percentage-men-women/}{Body Fat Percentage Photos Of Men \& Women}}. I cannot confirm the numbers to be correct but they give a good indication in my opinion to what body fat percentage looks like at different values (note that lower body fat percentage will not give you bigger muscles, it just happens to be the case in the pictures).
 	
-  	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.6]{bodyfatpercentage.jpg}
+		\caption{Different body fat \% for both men and women}
+	\end{figure}
+	
+	Computing body fat percentage is not easy. There is no 100\% accurate way of doing it. You can take pictures of yourself in the mirror and then compare with the images above, a lot of people estimate this way and I find it good as well. If you want a more accurate way of doing it though, there are a few options out there. The most accurate way is an MRI scan\footnote{\href{https://pubmed.ncbi.nlm.nih.gov/9655763/}{Cadaver validation of skeletal muscle measurement by magnetic resonance imaging and computerized tomography}}. However this is not available to the public as far as I know. This leaves us with the second most accurate option I know, which is a DEXA scan\footnote{\href{https://en.wikipedia.org/wiki/Dual-energy_X-ray_absorptiometry}{DEXA on Wikipedia}}. This is a machine that does an x-ray scan of your body. It shows quite some details, for example the lean mass and fat mass in your arms, trunk (core) and legs. You can see an example of a DEXA scan result below.
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.5]{dexa-scan.png}
+		\caption{Result of a DEXA scan, showing body fat for different body parts}
+	\end{figure}
+However, DEXA scans can have errors too, and a lot of people talk against it\footnote{\href{https://www.youtube.com/watch?v=2Gg4Jm5KS1Y}{Greg Doucette on Youtube}}\footnote{\href{https://www.youtube.com/watch?v=P17bcpYE8Ew}{Brain Shaw on Youtube}}. The scan is also expensive, I did it in London at bodyscan for roughly \pounds 100.
+	
+	Before DEXA scans, hydrostatic weighing\footnote{\href{https://en.wikipedia.org/wiki/Hydrostatic_weighing}{Hydrostatic Weighing on Wikipedia}} was considered the most accurate method available to the public. You had to step on a scale underwater and the value you get helps estimate your body density, which can be used to approximate your body fat percentage.	Another way of estimating body fat percentage which is similar to hydrostatic weighing is whole-body air displacement plethysmography\footnote{\href{https://en.wikipedia.org/wiki/Air_displacement_plethysmography}{Air Displacement Plethysmography on Wikipedia}} (for example Bod Pod\footnote{\href{https://www.cosmed.com/en/products/body-composition/bod-pod}{Bod Pod}}).
+	
+	More common methods of estimating body fat are the skinfold methods\footnote{\href{https://en.wikipedia.org/wiki/Body_fat_percentage\#Anthropometric_methods}{Skinfold Methods on Wikipedia}} (using a device called caliper) and using bioelectrical impedance analysis\footnote{\href{https://en.wikipedia.org/wiki/Bioelectrical_impedance_analysis}{Bioelectrical Impedance Analysis on Wikipedia}}. The first method tries to determine the thickness of the fat layer under the skin. You use the caliper at various spots on the body and look up the measurement in a table which will tell you the estimated body fat. It's best if you use a personal trainer or someone with experience to perform the reading. For bioelectrical impedance analysis a small electric current is sent through the body and the resistance of the whole body is computed, which depends on body fat percentage. Some scales also state they can compute body fat percentage just from your weight, height, age and sex. However this is not really possible unless you don't lift at all and the extra weight comes from fat alone. Just to recap all the methods described in this section, from most accurate to least one:
+	
+	\begin{enumerate}
+		\item Magnetic Resonance Imaging (MRI) and Computerized Tomography (CT)
+		\item Dual-energy X-ray absorptiometry (DEXA / DXA)
+		\item Hydrostatic weighing
+		\item Whole-body air displacement plethysmography
+		\item Skinfold methods (calipers)
+		\item Bioelectrical impedance analysis
+	\end{enumerate}
+	
 \end{document}
