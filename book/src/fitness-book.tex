@@ -162,6 +162,64 @@ However, DEXA scans can have errors too, and a lot of people talk against it\foo
 		\item Bioelectrical impedance analysis
 	\end{enumerate}
 	
+	\section{Macronutrients}
+	
+	The food you eat can be broken down into different components. The stuff that gives you energy (e.g. for movement) is called macronutrients --- these are carbohydrates
+	(carbs), fat \& protein. The stuff that doesn't give you energy is called micronutrients (e.g. vitamins \& minerals). You still need it to be a healthy individual.
+	The reason people talk so much about macronutrients (or macros) is because your body process them differently: carbs can be broken down and used for energy faster than fats,
+	proteins are the only macros that can be stored as muscle on your body and so on. It's hard for you to tell how many carbs, fats and proteins the food you're eating contains.
+	You have to read the label or research in advance. To give some example of macros in different types of food: bread is mostly carbs, in 100g of bread you have 49g of carbs,
+	9g of protein and 3.2g of fat. This composition is also what tells us how many calories 100g of bread has, 1g of carbs has 4 calories, 1g of fat has 9 calories and 1g of protein
+	has 4 calories, just like carbs. If we add these values up, we get $49 \times 4 + 9 \times 4 + 3.2 \times 9 = 196 + 36 + 28.8 = 260.8$ calories.
+	
+	There are different theories that you should eat this many grams of carbs and this many grams of fat. One such example is the zone 
+	diet\footnote{\href{https://www.healthline.com/nutrition/zone-diet}{The Zone Diet on Healthline}}. This says you should eat 40\% carbs, 30\% fat and 30\% protein. For example,
+	if you need to eat 2,000 calories a day and want to follow the zone diet, you should aim to eat 145.5g of carbs (582kcal), 109g of fat (981kcal) and 109g of protein (436kcal).
+	However, from my experience it doesn't really matter how you split carbs and fat, it's just a matter of preference. At the end of the day it's calories in and calories out that
+	matters\footnote{\href{https://www.youtube.com/watch?v=ssmJ50HRTp8}{Greg Doucette on Macros on Youtube}}. You should pick a diet you feel comfortable with, so if you like carbs just eat more carbs, if you like fat just eat more fat.
+	It does matter how much protein you have though, since it's the only thing your body can use for muscle growth. A common recommendation for building muscles is to eat
+	1g of protein per pound of body weight, or 2.2g per kg\footnote{\href{https://www.healthline.com/nutrition/how-much-protein-per-day}{Protein Intake on Healthline}}. For example,
+	if you weight 70kg you should eat 154g of protein every day.
+	
+	If you really want to try and follow a certain macro split, you might want to compute how many grams of carbs, fat and protein to consume based on their percentage. I know
+	I had to compute this when I was trying to follow certain percentages. To make your life easier you can plug in your values into the formulas below. The value $c$ is the 
+	percentage of carbs, $f$ is percentage of fat, $p$ is percentage of protein and $T$ is the total caloric intake:
+	
+	\begin{equation}
+		Carbs(g) = c \times \frac{T}{4 \times c + 9 \times f + 4 \times p}
+	\end{equation}
+	
+	\begin{equation}
+		Fat(g) = f \times \frac{T}{4 \times c + 9 \times f + 4 \times p}
+	\end{equation}
+		
+	\begin{equation}
+		Protein(g) = p \times \frac{T}{4 \times c + 9 \times f + 4 \times p}
+	\end{equation}
+	
+	In our previous example, $T = 2000$, $c = 40\% = 0.4$, $f = 30\% = 0.3$ and $p = 30\% = 0.3$. If we plug these values in the formulas above we get
+	
+	$$ \frac{T}{4 \times c + 9 \times f + 4 \times p} = \frac{2000}{4 \times 0.4 + 9 \times 0.3 + 4 \times 0.3} = 363.63 $$
+	
+	$$ Carbs = 363.63 \times 0.4 = 145.5g $$
+	
+	$$ Fats = 363.63 \times 0.3 = 109g $$
+
+	$$ Protein = 363.63 \times 0.3 = 109g $$		
+	
+	\section{Fat Stores, Distribution and Carb Stores}
+	
+	If you eat more than you should in a day, so more than your TDEE, your body will store the excess food either as fat or muscle on your body. As I previously mentioned, only
+	proteins can be stored as muscle and only if you train accordingly (more on this later). The way fat gets stored across your body, for example on arms, belly, hips etc, depends
+	on genetics and you can't really influence it.
+	
+	Your body also has a carbohydrate storage just like it has for fat. This is used as an emergency source of energy, since the body can process carbs faster than fat, 
+	for example if you come face to face with a lion and you have to run for your life, the carb storage will be used instead of the fat on your body.
+	
+	%Usually high intensity activities, such 
+	
+	%Total carbohydrate for an average human is around 503g (or 2012 calories). This is muscle glycogen (around 400g), liver glycogen (100g) and plasma glucose (3g). 
+		
 	\section{Bulking \& Cutting}	
 	
 	Your TDEE is the total amount of energy your body needs every day to be able to function properly. If you eat less than that, your body has to go to fat stores or muscles to get that energy. If you eat more, the excess food will be stored on your body as fat or muscle. This is the reason people say that you need to be at a surplus to gain muscles, if you are at a caloric deficit then the proteins that should be stored on your muscles will be used for heat and movement instead. This phase in which you eat more than you should to build muscles is called bulking. Being at a caloric surplus will make it impossible for you to burn fat however, in fact you might end up gaining fat mass as well since the body is not optimal at storing pure muscles. To get rid of the excess fat you need to put yourself at a caloric deficit when you try to burn the fat stores while keeping the muscles you gained. This phase is called cutting. Bulking and cutting are normal cycles for bodybuilders, they will bulk, cut, bulk, cut and so on. There are instances when you can build muscles and cut down fat at the same time, I experienced this on myself when I started training again after a 3 months absence. I've read that it can also happen when you start training for the first time or if you take steroids, but more on steroids later. Building muscles and losing fat at the same time is also referred to as body recomposition\footnote{\href{https://www.healthline.com/nutrition/body-recomposition\#how-it-works}{Healthline Article on Body Recomposition}}.
