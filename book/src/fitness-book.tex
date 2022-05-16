@@ -13,7 +13,7 @@
 % to use images
 \usepackage{graphicx}
 % where images are stored
-\graphicspath{{images/}}
+\graphicspath{{src/images/}}
 
 \title{
   Introduction to Fitness \\
@@ -78,7 +78,8 @@
   
   	\section{Calories, BMR, TDEE}
   	
-	I feel like I need to explain how food works first before anything else. Your body is an energy convertor. It gets energy from food\footnote{\href{https://en.wikipedia.org/wiki/Food_energy}{Food Energy on Wikipedia}} and converts it to heat, movement (kinetic energy) and 
+	I feel like I need to explain how food works first before anything else. Your body is an energy convertor. It gets energy from
+        food\footnote{\href{https://en.wikipedia.org/wiki/Food_energy}{Food Energy on Wikipedia}} and converts it to heat, movement (kinetic energy) and 
 	electrical energy for thinking. The amount of energy needed without movement (so for heat, thinking and perhaps others things too) is referred 
 	to as basal metabolic rate or BMR\footnote{\href{https://en.wikipedia.org/wiki/Basal_metabolic_rate}{Basal Metabolic Rate on Wikipedia}} and it
 	doesn't change much from day to day. If you include the energy for movement too you get your total daily energy expenditure or TDEE. If you eat
@@ -94,12 +95,14 @@
 	
 	People have tried to come up with formulas to compute BMR from different factors, such as height, age, sex or body fat percentage (this is just
 	the proportion of fat you have in your body relative to your whole mass, so 100 $\times$ fat mass / body mass). At first only mass (m), height (h) 
-	and age were taken into account in Harris-Benedict formula for BMR from 1919\footnote{\href{
+	and age (a) were taken into account in Harris-Benedict formula for BMR from 1919\footnote{\href{
 	https://en.wikipedia.org/wiki/Harris\%E2\%80\%93Benedict_equation}{Harris-Benedict on Wikipedia}}
 	\begin{equation}
-		BMR = 13.7516m + 5.0033h + 66.4730
+		BMR = 13.7516m + 5.0033h - 6.755a + 66.4730
 	\end{equation}
-  	This formula was later revised in 1984 with just a few minor changes. Later in 1990 Mifflin St Jeor\footnote{\href{https://pubmed.ncbi.nlm.nih.gov/2305711/}{A new predictive equation for resting energy expenditure in healthy individuals (1990)}} came with 2 formulas for BMR, one for men (\ref{males}) and one for women (\ref{females}).
+  	This formula was later revised in 1984 with just a few minor changes. Later in 1990 Mifflin St
+        Jeor\footnote{\href{https://pubmed.ncbi.nlm.nih.gov/2305711/}{A new predictive equation for resting energy expenditure in healthy individuals (1990)}}
+        came with 2 formulas for BMR, one for men (\ref{males}) and one for women (\ref{females}).
 	\begin{equation}
 		\label{males}
 		BMR (males) = 10m + 6.25h - 5a + 5
@@ -108,13 +111,18 @@
 		\label{females}
 		BMR (females) = 10m + 6.25h - 5a - 161
 	\end{equation}
-	Finally Katch-McArdle\footnote{\href{https://books.google.co.uk/books/about/Essentials_of_Exercise_Physiology.html?id=L4aZIDbmV3oC}{Essentials of Exercise Physiology Book by Katch \& McArdle (2006)}} included body fat percentage (f) into the equation, removing age and height
+	Finally Katch-McArdle\footnote{\href{https://books.google.co.uk/books/about/Essentials_of_Exercise_Physiology.html?id=L4aZIDbmV3oC}{Essentials of Exercise Physiology Book by Katch \& McArdle (2006)}}
+        included body fat percentage (f) into the equation, removing age and height
 	\begin{equation}
 		BMR = 370 + (21.6m (1 - \frac{f}{100}))
 	\end{equation}
-	This is an interesting point because body fat percentage does affect how many calories you burn even at rest. The rule I know is that 10 pounds of muscle would burn 50 kcal in a day at rest, while 10 pounds of fat will only burn 20 kcal\footnote{\href{https://www.webmd.com/diet/obesity/features/8-ways-to-burn-calories-and-fight-fat}{Burning Calories on WebMD}} (less than half), so if you're 80kg with 15\% body fat you will burn more calories at rest than someone who is 80kg with 20\% body fat. This also explains the Mifflin St Jeor above, since women have naturally more fat than men. 
+	This is an interesting point because body fat percentage does affect how many calories you burn even at rest. The rule I know is that 10 pounds of muscle would burn 50 kcal in a day at rest,
+        while 10 pounds of fat will only burn 20 kcal\footnote{\href{https://www.webmd.com/diet/obesity/features/8-ways-to-burn-calories-and-fight-fat}{Burning Calories on WebMD}} (less than half),
+        so if you're 80kg with 15\% body fat you will burn more calories at rest than someone who is 80kg with 20\% body fat. This also explains the Mifflin St Jeor above, since women have naturally
+        more fat than men.
 	
-	Let's take an example using the last formula: if you weight $70kg$ and your body fat percentage is $18\%$ then your BMR should be $370 + (21.6 \times 70 \times (1 - 18/100)) = 1609.84$ calories. Add your movement energy to this and you get your TDEE. I haven't spent the time trying to derive how to
+	Let's take an example using the last formula: if you weight $70kg$ and your body fat percentage is $18\%$ then your BMR should be $370 + (21.6 \times 70 \times (1 - 18/100)) = 1609.84$ calories.
+        Add your movement energy to this and you get your TDEE. I haven't spent the time trying to derive how to
 	compute this one (e.g. from kinetic energy) because all of these formulas are great but at the end of the day they are just for your orientation.
 	The best way to compute your TDEE is to actually measure it: without changing your habits, eat 2,000 calories every day for 1-2 weeks. Weight
 	yourself every day: does your weight change? If no then it's safe to assume your TDEE is 2,000 calories. Does your weight go up? It probably means
@@ -130,12 +138,20 @@
 	start with an online TDEE calculator\footnote{\href{https://tdeecalculator.net/}{Example of online TDEE calculator}} (there are plenty out there) 
 	just to get a value to work with, then keep adjusting intake until I hit my maintenance.
 	
-	
 	\section{Body Fat Percentage}
 	
-	Body fat percentage is discussed a lot in fitness because it affects how you look. Fat is something that is stored on your body between skin and muscles. The more fat you have on you the less visible your muscles will be. However, just taking the absolute value of fat mass is not a good indicator of how well your muscles are showing, since taller people will have more fat mass but more body surface to spread it across. So instead we can look at the proportion of fat in relation to muscles. The body fat percentage will normally dictate certain features you can see on your body, for example the average guy will have his abdominal muscles ("abs") showing around 10-14\% body fat\footnote{\href{https://www.healthline.com/health/body-fat-percentage-for-abs}{Healthline Article on Abs}}. To better understand what I'm talking about look at the image below that I found on builtlean.com\footnote{\href{https://www.builtlean.com/body-fat-percentage-men-women/}{Body Fat Percentage Photos Of Men \& Women}}. I cannot confirm the numbers to be correct but they give a good indication in my opinion to what body fat percentage looks like at different values (note that lower body fat percentage will not give you bigger muscles, it just happens to be the case in the pictures). Usually people say that an ideal body fat \% (both in terms of health and looks) is around 12\% for men and around 24\% for women. Another thing to keep in 
-	mind is that your genetics will influence how low in body fat \% you can get. For some men reaching 5\% might be impossible without taking steroids for example. Also going
-	under 10\% is usually not considered healthy anymore, a lot of people complain about mood, sleep and even sex drive problems once you are that low in body fat \%\footnote{\href{https://www.youtube.com/watch?v=IHvmtvzOfDg}{VitruvianPhysique on Optimal Body Fat \% on Youtube}}. 
+	Body fat percentage is discussed a lot in fitness because it affects how you look. Fat is something that is stored on your body between skin and muscles.
+        The more fat you have on you the less visible your muscles will be. However, just taking the absolute value of fat mass is not a good indicator of how well
+        your muscles are showing, since taller people will have more fat mass but more body surface to spread it across. So instead we can look at the proportion of
+        fat in relation to muscles. The body fat percentage will normally dictate certain features you can see on your body, for example the average guy will have his
+        abdominal muscles ("abs") showing around 10-14\% body fat\footnote{\href{https://www.healthline.com/health/body-fat-percentage-for-abs}{Healthline Article on Abs}}.
+        To better understand what I'm talking about look at the image below that I found on
+        builtlean.com\footnote{\href{https://www.builtlean.com/body-fat-percentage-men-women/}{Body Fat Percentage Photos Of Men \& Women}}. I cannot confirm the numbers to be
+        correct but they give a good indication in my opinion to what body fat percentage looks like at different values (note that lower body fat percentage will not give you
+        bigger muscles, it just happens to be the case in the pictures). Usually people say that an ideal body fat \% (both in terms of health and looks) is around 12\% for men
+        and around 24\% for women. Another thing to keep in mind is that your genetics will influence how low in body fat \% you can get. For some men reaching 5\% might be
+        impossible without taking steroids for example. Also going under 10\% is usually not considered healthy anymore, a lot of people complain about mood, sleep and even sex
+        drive problems once you are that low in body fat \%\footnote{\href{https://www.youtube.com/watch?v=IHvmtvzOfDg}{VitruvianPhysique on Optimal Body Fat \% on Youtube}}. 
 	
 	\begin{figure}[h]
 		\centering
@@ -143,17 +159,35 @@
 		\caption{Different body fat \% for both men and women}
 	\end{figure}
 	
-	Computing body fat percentage is not easy. There is no 100\% accurate way of doing it. You can take pictures of yourself in the mirror and then compare with the images above, a lot of people estimate this way and I find it good as well. If you want a more accurate way of doing it though, there are a few options out there. The most accurate way is an MRI scan\footnote{\href{https://pubmed.ncbi.nlm.nih.gov/9655763/}{Cadaver validation of skeletal muscle measurement by magnetic resonance imaging and computerized tomography}}. However this is not available to the public as far as I know. This leaves us with the second most accurate option I know, which is a DEXA scan\footnote{\href{https://en.wikipedia.org/wiki/Dual-energy_X-ray_absorptiometry}{DEXA on Wikipedia}}. This is a machine that does an x-ray scan of your body. It shows quite some details, for example the lean mass and fat mass in your arms, trunk (core) and legs. You can see an example of a DEXA scan result below.
+	Computing body fat percentage is not easy. There is no 100\% accurate way of doing it. You can take pictures of yourself in the mirror and then compare with the images above,
+        a lot of people estimate this way and I find it good as well. If you want a more accurate way of doing it though, there are a few options out there. The most accurate way is an
+        MRI scan\footnote{\href{https://pubmed.ncbi.nlm.nih.gov/9655763/}{Cadaver validation of skeletal muscle measurement by magnetic resonance imaging and computerized tomography}}.
+        However this is not available to the public as far as I know. This leaves us with the second most accurate option I know, which is a DEXA
+        scan\footnote{\href{https://en.wikipedia.org/wiki/Dual-energy_X-ray_absorptiometry}{DEXA on Wikipedia}}. This is a machine that does an x-ray scan of your body. It shows quite some details,
+        for example the lean mass and fat mass in your arms, trunk (core) and legs. You can see an example of a DEXA scan result below.
+
 	\begin{figure}[h]
 		\centering
 		\includegraphics[scale=0.5]{dexa-scan.png}
 		\caption{Result of a DEXA scan, showing body fat for different body parts}
 	\end{figure}
-However, DEXA scans can have errors too, and a lot of people talk against it\footnote{\href{https://www.youtube.com/watch?v=2Gg4Jm5KS1Y}{Greg Doucette on DEXA Scans on Youtube}}\footnote{\href{https://www.youtube.com/watch?v=P17bcpYE8Ew}{Brain Shaw on DEXA Scans on Youtube}}. The scan is also expensive, I did it in London at bodyscan for roughly \pounds 100.
+        
+        However, DEXA scans can have errors too, and a lot of people talk against it\footnote{\href{https://www.youtube.com/watch?v=2Gg4Jm5KS1Y}{Greg Doucette on DEXA Scans on Youtube}}
+        \footnote{\href{https://www.youtube.com/watch?v=P17bcpYE8Ew}{Brain Shaw on DEXA Scans on Youtube}}. The scan is also expensive, I did it in London at bodyscan for roughly \pounds 100.
 	
-	Before DEXA scans, hydrostatic weighing\footnote{\href{https://en.wikipedia.org/wiki/Hydrostatic_weighing}{Hydrostatic Weighing on Wikipedia}} was considered the most accurate method available to the public. You had to step on a scale underwater and the value you get helps estimate your body density, which can be used to approximate your body fat percentage.	Another way of estimating body fat percentage which is similar to hydrostatic weighing is whole-body air displacement plethysmography\footnote{\href{https://en.wikipedia.org/wiki/Air_displacement_plethysmography}{Air Displacement Plethysmography on Wikipedia}} (for example Bod Pod\footnote{\href{https://www.cosmed.com/en/products/body-composition/bod-pod}{Bod Pod}}).
+	Before DEXA scans, hydrostatic weighing\footnote{\href{https://en.wikipedia.org/wiki/Hydrostatic_weighing}{Hydrostatic Weighing on Wikipedia}} was considered the most accurate method
+        available to the public. You had to step on a scale underwater and the value you get helps estimate your body density, which can be used to approximate your body fat percentage.
+        Another way of estimating body fat percentage which is similar to hydrostatic weighing is whole-body air displacement
+        plethysmography\footnote{\href{https://en.wikipedia.org/wiki/Air_displacement_plethysmography}{Air Displacement Plethysmography on Wikipedia}} (for example
+        Bod Pod\footnote{\href{https://www.cosmed.com/en/products/body-composition/bod-pod}{Bod Pod}}).
 	
-	More common methods of estimating body fat are the skinfold methods\footnote{\href{https://en.wikipedia.org/wiki/Body_fat_percentage\#Anthropometric_methods}{Skinfold Methods on Wikipedia}} (using a device called caliper) and using bioelectrical impedance analysis\footnote{\href{https://en.wikipedia.org/wiki/Bioelectrical_impedance_analysis}{Bioelectrical Impedance Analysis on Wikipedia}}. The first method tries to determine the thickness of the fat layer under the skin. You use the caliper at various spots on the body and look up the measurement in a table which will tell you the estimated body fat. It's best if you use a personal trainer or someone with experience to perform the reading. For bioelectrical impedance analysis a small electric current is sent through the body and the resistance of the whole body is computed, which depends on body fat percentage. Some scales also state they can compute body fat percentage just from your weight, height, age and sex. However this is not really possible unless you don't lift at all and the extra weight comes from fat alone. Just to recap all the methods described in this section, from most accurate to least one:
+	More common methods of estimating body fat are the skinfold methods\footnote{\href{https://en.wikipedia.org/wiki/Body_fat_percentage\#Anthropometric_methods}{Skinfold Methods on Wikipedia}}
+        (using a device called caliper) and using bioelectrical impedance analysis\footnote{\href{https://en.wikipedia.org/wiki/Bioelectrical_impedance_analysis}{Bioelectrical Impedance
+          Analysis on Wikipedia}}. The first method tries to determine the thickness of the fat layer under the skin. You use the caliper at various spots on the body and look up the measurement in
+        a table which will tell you the estimated body fat. It's best if you use a personal trainer or someone with experience to perform the reading. For bioelectrical impedance analysis a small
+        electric current is sent through the body and the resistance of the whole body is computed, which depends on body fat percentage. Some scales also state they can compute body fat percentage
+        just from your weight, height, age and sex. However this is not really possible unless you don't train at all and the extra weight comes from fat alone. Just to recap all the methods
+        described in this section, from most accurate to least one:
 	
 	\begin{enumerate}
 		\item Magnetic Resonance Imaging (MRI) and Computerized Tomography (CT)
@@ -180,11 +214,10 @@ However, DEXA scans can have errors too, and a lot of people talk against it\foo
 	diet\footnote{\href{https://www.healthline.com/nutrition/zone-diet}{The Zone Diet on Healthline}}. This says you should eat 40\% carbs, 30\% fat and 30\% protein. For example,
 	if you need to eat 2,000 calories a day and want to follow the zone diet, you should aim to eat 145.5g of carbs (582kcal), 109g of fat (981kcal) and 109g of protein (436kcal).
 	However, from my experience it doesn't really matter how you split carbs and fat, it's just a matter of preference. At the end of the day it's calories in and calories out that
-	matters\footnote{\href{https://www.youtube.com/watch?v=ssmJ50HRTp8}{Greg Doucette on Macros on Youtube}}. You should pick a diet you feel comfortable with, so if you like carbs just eat more carbs, if you like fat just eat more fat.
-	It does matter how much protein you have though, since it's the only thing your body can use for muscle growth. A common recommendation for building muscles is to eat
-	1g of protein per pound of body weight, or 2.2g per kg\footnote{\href{https://www.healthline.com/nutrition/how-much-protein-per-day}{Protein Intake on Healthline}}. For example,
-	if you weight 70kg you should eat 154g of protein every day.
-	
+	matters\footnote{\href{https://www.youtube.com/watch?v=ssmJ50HRTp8}{Greg Doucette on Macros on Youtube}}. You should pick a diet you feel comfortable with, so if you like carbs
+        just eat more carbs, if you like fat just eat more fat. It does matter how much protein you have though, since it's the only thing your body can use for muscle growth. A common
+        recommendation for building muscles is to eat 1g of protein per pound of body weight, or 2.2g per
+        kg\footnote{\href{https://www.healthline.com/nutrition/how-much-protein-per-day}{Protein Intake on Healthline}}. For example, if you weight 70kg you should eat 154g of protein every day.
 	If you really want to try and follow a certain macro split, you might want to compute how many grams of carbs, fat and protein to consume based on their percentage. I know
 	I had to compute this when I was trying to follow certain percentages. To make your life easier you can plug in your values into the formulas below. The value $c$ is the 
 	percentage of carbs, $f$ is percentage of fat, $p$ is percentage of protein and $T$ is the total caloric intake:
@@ -215,13 +248,14 @@ However, DEXA scans can have errors too, and a lot of people talk against it\foo
 	
 	If you eat more than you should in a day, so more than your TDEE, your body will store the excess food either as fat or muscle on your body. As I previously mentioned, only
 	proteins can be stored as muscle and only if you train accordingly (more on this later). The way fat gets stored across your body (fat distribution) for example on arms, belly,
-	hips etc, depends on genetics and you can't really influence it unless of course, you undergo surgery to remove fat cells from your body. For example some people store a lot of
-	fat on hips, other store it on legs and bums, others on face and so on. One clear factor that influences fat distribution is gender, usually women will store fat on legs, bums,
-	arms and breasts while men will store most fat around their belly. I have a pretty unfortunate fat distribution, since I store fat the same way women do, I get a lot on arms,
+	hips etc, depends on genetics and you can't really influence it unless of course, you undergo surgery to remove fat cells from a specific area on your body. For example some people
+        store a lot of fat on hips, other store it on legs and bums, others on face and so on. One clear factor that influences fat distribution is gender, usually women will store fat on legs,
+        bums, arms and breasts while men will store most fat around their belly. I have a pretty unfortunate fat distribution, since I store fat the same way women do, I get a lot on arms,
 	legs, bum and even around breasts. I used to think this is due to hormonal imbalances (maybe too much estrogen and too low testosterone) but it turns out this is not the case,
 	since my testosterone levels are really high and estrogen really low. From what I've read, the fat distribution is influenced by fat cell receptors: alpha-2 and beta receptors.
 	The beta receptors will release fat while the alpha-2 will stall it, so the ratio of alpha-2 to beta receptors will dictate how you lose or gain fat in different places on your
-	body\footnote{\href{https://www.youtube.com/watch?v=GbqN2sj8XyY}{VitruvianPhysique on Body Fat Distribution on Youtube}}\footnote{\href{https://www.youtube.com/watch?v=X_GeSVbAU3U}{VitruvianPhysique on Body Fat Distribution Part 2 on Youtube}}. 
+	body\footnote{\href{https://www.youtube.com/watch?v=GbqN2sj8XyY}{VitruvianPhysique on Body Fat Distribution on Youtube}}
+        \footnote{\href{https://www.youtube.com/watch?v=X_GeSVbAU3U}{VitruvianPhysique on Body Fat Distribution Part 2 on Youtube}}. 
 	I don't know much more about it, but it seems to be purely genetic. The important thing to remember here is that you cannot control how your body stores or burns fat and from
 	which areas. This is also what people mean when they say that losing fat is not site specific, you cannot burn fat from your belly just by doing crunches. Your body will decide
 	where it takes the fat from based on the receptors I previously mentioned.
@@ -234,7 +268,7 @@ However, DEXA scans can have errors too, and a lot of people talk against it\foo
 	carbs in a high intensity activity, your body will take 100kcal of carbs from your next meal to replenish these stores, so your meal will have 100kcal less that can be
 	stored as fat. At the end of the day, it's calories in and calories out that matters. Most of the carb stores are located in muscles and it's called  muscle glycogen. 
 	You also have them in liver as liver glycogen and a little bit in blood as plasma glucose. An average human adult will have around 503g of carbs (2012kcal) stored in body:
-	around 400g in muscle glycogen, 100g in liver glycogen and 3g as plasma glucose.  
+	around 400g in muscle glycogen, 100g in liver glycogen and 3g as plasma glucose. 
 	
 	Glycogen is important to understand random weight fluctuations, because it holds water. If you suddenly stop eating carbs (so the keto diet I previously mentioned), you will
 	completely deplete your body of glycogen. This will result in a sudden loss of around 2kg of water from your body, which has nothing to do with you losing fat. If one day you
@@ -244,21 +278,45 @@ However, DEXA scans can have errors too, and a lot of people talk against it\foo
 		
 	\section{Bulking \& Cutting}	
 	
-	Your TDEE is the total amount of energy your body needs every day to be able to function properly. If you eat less than that, your body has to go to fat stores or muscles to get that energy. If you eat more, the excess food will be stored on your body as fat or muscle. This is the reason people say that you need to be at a surplus to gain muscles, if you are at a caloric deficit then the proteins that should be stored on your muscles will be used for heat and movement instead. This phase in which you eat more than you should to build muscles is called bulking. Being at a caloric surplus will make it impossible for you to burn fat however, in fact you might end up gaining fat mass as well since the body is not optimal at storing pure muscles. To get rid of the excess fat you need to put yourself at a caloric deficit when you try to burn the fat stores while keeping the muscles you gained. This phase is called cutting. Bulking and cutting are normal cycles for bodybuilders, they will bulk, cut, bulk, cut and so on. There are instances when you can build muscles and cut down fat at the same time, I experienced this on myself when I started training again after a 3 months absence. I've read that it can also happen when you start training for the first time or if you take steroids, but more on steroids later. Building muscles and losing fat at the same time is also referred to as body recomposition\footnote{\href{https://www.healthline.com/nutrition/body-recomposition\#how-it-works}{Healthline Article on Body Recomposition}}.
+	Your TDEE is the total amount of energy your body needs every day to be able to function properly. If you eat less than that, your body has to go to fat stores or muscles to get that energy.
+        If you eat more, the excess food will be stored on your body as fat or muscle. This is the reason people say that you need to be at a surplus to gain muscles, if you are at a caloric deficit
+        then the proteins that should be stored on your muscles will be used for heat and movement instead. This phase in which you eat more than you should to build muscles is called bulking.
+        Being at a caloric surplus will make it impossible for you to burn fat however, in fact you might end up gaining fat mass as well since the body is not optimal at storing pure muscles.
+        To get rid of the excess fat you need to put yourself at a caloric deficit when you try to burn the fat stores while keeping the muscles you gained. This phase is called cutting. Bulking
+        and cutting are normal cycles for bodybuilders, they will bulk, cut, bulk, cut and so on. There are instances when you can build muscles and cut down fat at the same time, I experienced this on
+        myself when I started training again after a 3 months absence. I've read that it can also happen when you start training for the first time or if you take steroids, but more on steroids later.
+        Building muscles and losing fat at the same time is also referred to as body recomposition\footnote{\href{https://www.healthline.com/nutrition/body-recomposition\#how-it-works}{Healthline
+          Article on Body Recomposition}}.
 	
-	If you keep training (e.g. lifting weights) while cutting, your body will value your muscles more than the fat, so it will rather use fat to get the extra energy it needs. This is an oversimplified explanation of how everything works, in reality it's more complex than this. A different explanation would be this: the body has workers that take macronutrients (carbs, fat \& proteins) from food to places where they need to be. In this case the workers that take proteins to muscle is the testosterone in your body. Testosterone will race other workers that take macronutrients to produce heat and convert them to movement --- these workers prefer carbs and fat over protein. Based on how much testosterone you have and how easy it is for your body to rebuild the muscles you might be able to use all the proteins you get to gain muscles while the body will have to go to fat stores to get all the energy, so basically building muscles and losing fat at the same time. I've seen this analogy of testosterone with construction workers used a lot in fitness. 
+	If you keep training (e.g. lifting weights) while cutting, your body will value your muscles more than the fat, so it will rather use fat to get the extra energy it needs. This is an
+        oversimplified explanation of how everything works, in reality it's more complex than this. A different explanation would be this: the body has workers that take macronutrients (carbs, fat \&
+        proteins) from food to places where they need to be. In this case the workers that take proteins to muscle is the testosterone in your body. Testosterone will race other workers that take
+        macronutrients to produce heat and convert them to movement --- these workers prefer carbs and fat over protein. Based on how much testosterone you have and how easy it is for your body to
+        rebuild the muscles you might be able to use all the proteins you get to gain muscles while the body will have to go to fat stores to get all the energy, so basically building muscles and
+        losing fat at the same time. I've seen this analogy of testosterone with construction workers used a lot in fitness. 
 	
 	Knowing your TDEE, what is the caloric surplus you should aim for during a bulking phase? Most people seem to go 10-20\% more for what's considered a
-        "lean bulk"\footnote{\href{https://www.youtube.com/watch?v=rCdba0UPTMk}{VitruvianPhysique on Lean Bulking on Youtube}}\footnote{\href{https://us.myprotein.com/thezone/nutrition/the-lean-bulk-how-to-minimize-fat-gain-while-bulking/}{Lean Bulk on Myprotein website}}\footnote{\href{https://www.youtube.com/watch?v=Ci3qXtNFU_w}{Mike Thurston on Lean Bulking on Youtube}}.
+        "lean bulk"\footnote{\href{https://www.youtube.com/watch?v=rCdba0UPTMk}{VitruvianPhysique on Lean Bulking on Youtube}}
+        \footnote{\href{https://us.myprotein.com/thezone/nutrition/the-lean-bulk-how-to-minimize-fat-gain-while-bulking/}{Lean Bulk on Myprotein website}}
+        \footnote{\href{https://www.youtube.com/watch?v=Ci3qXtNFU_w}{Mike Thurston on Lean Bulking on Youtube}}.
         For example if your TDEE is 2,500 calories a day, you should eat 2,750 - 3,000 calories to lean bulk. If you go more than that it's considered a "dirty bulk" in which you gain more fat than
         you should. This happens because there is a limit to how much muscle you can gain. Eating more might make you feel stronger, however strength and muscle growth are not perfectly correlated,
         but more on this later. Doing a dirty bulk means you'll be spending more time to cut the fat afterwards. It can also make you feel like shit, eating this much and dieting for so long.
-        Sure it might give you more energy in the gym and make you even stronger but it all depends on what you want to achieve. If you want to stay in shape all of the time then it's probably not for you, since the only time you'll be in shape is at the end of a cut for a short period of time. A lot of people speak against dirty bulks\footnote{\href{https://www.youtube.com/watch?v=DjEnkzhz5T4}{Greg Doucette on Bulking and Cutting on Youtube}}\footnote{\href{https://www.youtube.com/watch?v=xl0ZNFcvuJI}{Greg Doucette on Bulking on Youtube}} and I don't approve of them myself since I tried it once --- I felt like shit, out of shape and it made no sense to me since losing fat was one of the main reasons I got into this. You might also experience stretch marks on dirty bulks if you gain weight too fast\footnote{\href{https://www.bodybuilding.com/content/stretchmark-maintenance.html}{Article on Stretchmarks on Bodybuilding.com}}. One mistake I notice people make when bulking is that they fall into thinking that overeating junk food is fine, since they are bulking anyway. I made this mistake myself as well. You should still "diet" and track your calories and weight accordingly, and have cheat days if you really feel like eating junk food. %
+        Sure it might give you more energy in the gym and make you even stronger but it all depends on what you want to achieve. If you want to stay in shape all of the time then it's probably not for you,
+        since the only time you'll be in shape is at the end of a cut for a short period of time. A lot of people speak against dirty bulks
+        \footnote{\href{https://www.youtube.com/watch?v=DjEnkzhz5T4}{Greg Doucette on Bulking and Cutting on Youtube}}
+        \footnote{\href{https://www.youtube.com/watch?v=xl0ZNFcvuJI}{Greg Doucette on Bulking on Youtube}} and I don't approve of them myself since I tried it once --- I felt like crap, out of shape and
+        it made no sense to me since losing fat was one of the main reasons I got into this. You might also experience stretch marks on dirty bulks if you gain weight too
+        fast\footnote{\href{https://www.bodybuilding.com/content/stretchmark-maintenance.html}{Article on Stretchmarks on Bodybuilding.com}}. One mistake I notice people make when bulking is that they
+        fall into thinking that overeating junk food is fine, since they are bulking anyway. I made this mistake myself as well. You should still "diet" and track your calories and weight accordingly,
+        and have cheat days if you really feel like eating junk food.
 	
-	How much should you eat when cutting down? The same holds true as for bulking, you should aim to eat 10-20\% less than you need every day. For a TDEE of 2,500 calories you should eat 2,000 - 2,250 calories.
-	If you lose weight too fast there is the risk of losing muscles too, and you don't want this to happen since you worked so hard to gain them in the first place. 
-	What many consider a good and safe pace to lose weight is 0.45-0.9kg per week (or 1-2 pounds)\footnote{\href{https://www.healthline.com/nutrition/losing-weight-too-fast}{Losing Weight too Fast on Healthline}}. The idea is that if you eat too little, your body will go into shock and try to use anything it can to keep you alive, including
-	muscle stores. Transitioning from a bulk to a cut (and the other way around) should always happen gradually, to give your body time to accommodate\footnote{\href{https://www.ironbuiltfitness.com/transition-from-cutting-to-bulking}{Transitioning from Bulking to Cutting on ironbuiltfitness.com}}. 
+	How much should you eat when cutting down? The same holds true as for bulking, you should aim to eat 10-20\% less than you need every day. For a TDEE of 2,500 calories you should eat
+        2,000 - 2,250 calories. If you lose weight too fast there is the risk of losing muscles too, and you don't want this to happen since you worked so hard to gain them in the first place. 
+	What many consider a good and safe pace to lose weight is 0.45-0.9kg per week (or 1-2 pounds)
+        \footnote{\href{https://www.healthline.com/nutrition/losing-weight-too-fast}{Losing Weight too Fast on Healthline}}. The idea is that if you eat too little, your body will go into shock and
+        try to use anything it can to keep you alive, including muscle stores. Transitioning from a bulk to a cut (and the other way around) should always happen gradually, to give your body time to
+        accommodate\footnote{\href{https://www.ironbuiltfitness.com/transition-from-cutting-to-bulking}{Transitioning from Bulking to Cutting on ironbuiltfitness.com}}. 
 	I noticed this on myself, I increased my caloric intake by more than 1,000 all of a sudden and I gained quite a bit of fat in a short amount of time. I would
 	personally go back to maintenance and stay there for 1-2 weeks before starting to lean bulk.
 	
@@ -287,7 +345,8 @@ However, DEXA scans can have errors too, and a lot of people talk against it\foo
         BMR's value? It turns out your body can change how much heat it produces (this has nothing to do with your body's temperature, you just radiate more or less heat in the surrounding
         environment) which can affect BMR. This happens usually if you are at a caloric deficit or surplus for a longer period of time, your body will try to adapt to your new intake. This
         process is called adaptive thermogenesis\footnote{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3673773/}{Adaptive Thermogenesis in Humans Article}}, or
-        metabolic damange\footnote{\href{https://www.youtube.com/watch?v=bLboowVr2DM}{VitruvianPhysique on Metabolic Damage on Youtube}}\footnote{\href{https://www.youtube.com/watch?v=VVF64oQ3yZk}{Greg Doucette on Metabolic Damage on Youtube}}.
+        metabolic damange\footnote{\href{https://www.youtube.com/watch?v=bLboowVr2DM}{VitruvianPhysique on Metabolic Damage on Youtube}}
+        \footnote{\href{https://www.youtube.com/watch?v=VVF64oQ3yZk}{Greg Doucette on Metabolic Damage on Youtube}}.
 
         If BMR adjusts to your diet then how can you ever lose weight? This is not as bad as it sounds and it won't keep you from losing weight. From my experience, this metabolic damage is
         not enough to keep you from losing weight. The BMR changes are really slow and there is always a limit to how low it can get. Notice that as you lose weight you'll also burn less
@@ -346,7 +405,7 @@ However, DEXA scans can have errors too, and a lot of people talk against it\foo
         So now you know your TDEE, you know whether you want to bulk or cut, so you have a caloric intake goal. To hit this goal you have to start counting how much you eat
         every day (as I've said before, I would advice against estimating this, since big errors will make it impossible for you to hit your goal). You can track in multiple
         ways, for example you can read the label of everything you eat and just write it down somewhere. You can also use a phone app to help you with that (for example
-        myfitnesspal \footnote{\href{https://www.myfitnesspal.com/}{MyFitnessPal website}} has such a feature). For me this seemed like a big burden, to always remember to log
+        myfitnesspal\footnote{\href{https://www.myfitnesspal.com/}{MyFitnessPal website}} has such a feature). For me this seemed like a big burden, to always remember to log
         every meal and make sure I hit my calories for the day. An alternative would be to make a meal plan: you plan your meals for the week, you cook in advance and then you
         don't need to track anymore. This option worked really well for me, and I felt like it saved me a lot of time and money. However, not everyone enjoys doing this, making a meal
         plan is not straightforward, takes time to perfect and unless you try really hard to diversify it, it could feel a bit boring to eat the same dishes every day. You can
@@ -395,8 +454,8 @@ However, DEXA scans can have errors too, and a lot of people talk against it\foo
         Cooking the food is not as hard as you might think. If you're not pretentious with your food then it doesn't require any cooking skills at all. I will describe the way
         I do it, which I think is really fast and for me it tastes good too. In my cutting meal plan I have a few dishes that require cooking: the classic chicken,
         rice and broccoli dish, salmon with bread, vegetables and eggs. I usually buy frozen broccoli/vegetables so I just need to heat them up in the microwave before eating.
-        This means I still have to cook the rice, chicken breast, salmon and eggs. For both the chicken breast and salmon I use a slow cooker. Slow cookers\footnote{\href{https://crockpot.co.uk/}{Crock-Pot slow cookers}}
-         are great devices
+        This means I still have to cook the rice, chicken breast, salmon and eggs. For both the chicken breast and salmon I use a slow cooker. Slow
+        cookers\footnote{\href{https://crockpot.co.uk/}{Crock-Pot slow cookers}} are great devices
         if you don't have time to cook. They are also really cheap (\textsterling 20-\textsterling 30). I find them an alternative to microwave: instead of buying already 
         cooked meals you can buy frozen
         food instead, throw it in the slow cooker in a similar way you do with the microwave, and later just take it out and it's ready to eat. It does take a rather long time 
@@ -416,8 +475,8 @@ However, DEXA scans can have errors too, and a lot of people talk against it\foo
         measurements once and and ended up being around 3 cups for 5 days. I rinse (a fancy word for washing) the rice, add it to the rice cooker and add water (in my case I use
         2 cups of water per cup of rice, so 6 cups of water in total). My rice cooker came with a steam tray, so I place 10 eggs (I eat 2 each day) in this steam tray and turn on
         the rice cooker. I leave the eggs for about 18min for the perfect consistency (I like the yolk a bit runny). The rice cooker stops automatically after the rice is cooked.
-        It normally takes around 40min. After this is done I split it again into 5 portions using the kitchen scale. I split the food I cook into tupperware\footnote{\href{https://igluumealprep.com/}{You can buy meal prep containers online}}
-         and put it in the
+        It normally takes around 40min. After this is done I split it again into 5 portions using the kitchen scale. I split the food I cook into
+        tupperware\footnote{\href{https://igluumealprep.com/}{You can buy meal prep containers online}} and put it in the
         fridge for the entire week. For some of you, eating a meal 5 days after it was cooked might be too much, but personally I had no issues. Yes, the food tastes much better
         early in the week (the rice is fluffier and the chicken breast more tender) and not so great on a Friday. However, I don't really have time to cook midweek. Even if it
         sounds like a lot of steps, I actively spend only 1-2h each Sunday to cook for the entire week and with enough Frank's Red Hot the food tastes amazing to me. It's more
@@ -436,7 +495,7 @@ However, DEXA scans can have errors too, and a lot of people talk against it\foo
         I tried cooking meals high in protein and I agree that some of them are super filling. For example egg whites are
         one of the most filling dishes I had and they are low in calories and high in protein. You can find egg whites liquid 
         boxes\footnote{\href{https://twochicks.co.uk}{Two Chicks Egg Whites}} that you can cook straight in
-        the pan or make something like protein pancakes \footnote{\href{https://www.youtube.com/watch?v=aDJ8K_gqzdI}{Greg Doucette with Protein Pancakes on Youtube}}. 
+        the pan or make something like protein pancakes\footnote{\href{https://www.youtube.com/watch?v=aDJ8K_gqzdI}{Greg Doucette with Protein Pancakes on Youtube}}. 
         I find a lot of high protein recipes online, mostly on YouTube. Examples of youtubers with such recipes: 
         Greg Doucette\footnote{\href{https://www.youtube.com/playlist?list=PLNAZHiu0ASAprWRUxQHAiHG1FhlJbyeIm}{Greg Doucette's Anabolic Kitchen on Youtube}}        
         (he also has a cookbook full of such recipes\footnote{\href{https://www.gregdoucette.com/products/cookbook-2}{Greg Doucette's Cookbook}}; haven't
@@ -512,7 +571,8 @@ However, DEXA scans can have errors too, and a lot of people talk against it\foo
         then going back to 3-5g a day.
 
         One thing worth mentioning about creatine is that it has been linked to
-        hair loss\footnote{\href{https://pubmed.ncbi.nlm.nih.gov/19741313/}{Article on creatine effects on DHT}}\footnote{\href{https://www.youtube.com/watch?v=NgcfEMu_WSE}{VitruvianPhysique on Creatine and Hair Loss on Youtube}}.
+        hair loss\footnote{\href{https://pubmed.ncbi.nlm.nih.gov/19741313/}{Article on creatine effects on DHT}}
+        \footnote{\href{https://www.youtube.com/watch?v=NgcfEMu_WSE}{VitruvianPhysique on Creatine and Hair Loss on Youtube}}.
         Most guys will experience male pattern
         baldness\footnote{\href{https://www.healthline.com/health/male-pattern-baldness}{Male pattern baldness on Healthline}} as they grow old. This happens because of testosterone (more specifically
         dihydrotestosterone or DHT) which gets attached to the hair follicle causing it to die out slowly. This normally happens with the hair on the top and not sides or back, since it's believed that
@@ -529,8 +589,10 @@ However, DEXA scans can have errors too, and a lot of people talk against it\foo
 
         Multivitamins --- a lot of people recommend taking multivitamins. Working out weakens your immune system right after exercise
         (T-cell production drops for up to 6h, after which it should return to normall)\footnote{\href{https://pubmed.ncbi.nlm.nih.gov/17037088/}{Article on immune system response to exercise}}.
-        This time interval in which your immune system is weakened is also called the \textit{open window}\footnote{\href{https://pubmed.ncbi.nlm.nih.gov/20839496/}{Article on open window after intense exercise}} and you are more likely to get sick during this time.
-        Multivitamins pills are known to help the immune system, which is one of the reasons they are recommended. If you manage to take your daily intake of vitamins and minerals from food I think you should be fine.
+        This time interval in which your immune system is weakened is also called the \textit{open window}\footnote{\href{https://pubmed.ncbi.nlm.nih.gov/20839496/}{Article on open
+          window after intense exercise}} and you are more likely to get sick during this time.
+        Multivitamins pills are known to help the immune system, which is one of the reasons they are recommended. If you manage to take your daily intake of vitamins and minerals from food I think
+        you should be fine.
         However, I find it harder to track what vitamins and minerals I eat in a day, so I'm taking multivitamins pills daily.
 
         Omega 3 --- this usually comes from fish oil. It is believed that fish oil should help with recovery (e.g. joint recovery, inflamations). It's also recommended for a lot of different
@@ -573,5 +635,122 @@ However, DEXA scans can have errors too, and a lot of people talk against it\foo
 		\item Intra-workout (carbs)
 		\item Glucosamine Chondroitin
 	\end{enumerate}
+
+        \section{Performance Enhancing Drugs}
+
+        I've already discussed performance enhancing drugs (PEDs) in the previous section, since the definition is a bit broad: anything that gives you a mental or physical edge while exercising or
+        competing. To that extent even caffeine or creatine are PEDs. However, when people in the fitness industry talk about PEDs they usually refer to either anabolic steroids or selective androgen
+        receptor modulators (SARMs) which I will discuss in the next sections. Personally I've never tried any of these but I will try to describe what I've heard and read about them.
+        Both steroids and SARMs have been used with great results: you are able to build muscles much quicker while cutting down fat
+        \footnote{\href{https://www.reddit.com/r/nattyorjuice/comments/c0mak1/physique_before_usage_of_the_steroids_is/}{Example of anabolic steroid transformation in 20 weeks}}.
+        They are commonly used in bodybuilding competitions to make the competitors bigger and leaner at the same time. However, they can have serious side-effects, including death. In fact quite a lot
+        of bodybuilders have died because of too much steroid use\footnote{\href{https://fitnessvolt.com/bodybuilder-deaths-heart-attack/}{21 Bodybuilders who Died of Heart Attacks}}.
+        The reasons people usually decide to use PEDs are
+
+	\begin{enumerate}
+		\item Being able to get really low in body fat \% (for example close to 5\%). This is usually useful for bodybuilders that compete in shows, where being leaner gets you a higher place
+		\item Being able to keep growing in size even after training for a long time / reaching your genetic potential
+		\item Being able to gain muscles and cut fat at the same time, or get lean really fast
+		\item Being able to eat junk food and drink alcohol while staying in shape
+	\end{enumerate}
+
+        However the side-effects can be
+
+	\begin{enumerate}
+		\item Impotence and testicular shrinkage (for men)
+		\item Brain \& liver cancer
+		\item Heart \& kidney disease
+		\item Development of breast tissue for men (Gynecomastia)
+		\item Deep voice or hair growth (facial or body) for women
+		\item Yellowing of eyes and skin
+		\item Depression
+		\item Severe acne
+		\item Bad breathe
+		\item Violent behavior
+		\item Death
+	\end{enumerate}
+
+        Since both steroids and SARMs increase testosterone in the body, your body will start producing less testosterone naturally. As a result for guys, the testicles will start to shrink, which could
+        lead to impotence. What people usually do is to have cycles of steroid use for around 8 weeks, followed by a post cycle therapy (PCT) of 4 weeks. During PCT you make sure your body will go back
+        to producing testosterone in normal levels. Since it takes some time for your testosterone levels to go back to normal, you might feel like crap in the meantime --- no strength, depression,
+        no sex drive, you lose muscle mass etc. It's considered good if you manage to keep at least half the muscle mass you gained while on cycle.
+        Another common side effect is an increased level of estrogen in the body. This happens because some testosterone is converted to estrogen in a process
+        called Aromatization\footnote{\href{https://www.blaineywellness.com/wp-content/uploads/2016/08/testosterone-and-aromatization-how-to-avoid-excess-estrogrogen-production.pdf}
+        {Testosterone and Aromatization: How To Avoid Excess Estrogen Production}} that keeps hormonal levels in balance. This will cause men to develop breast tissue just like women, and get 
+        \textit{puffy} nipples, as seen in Figure \ref{fig7}.
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.5]{gyno.jpg}
+		\caption{Example of gyno on bodybuilder - look at the nipple area}
+		\label{fig7}
+	\end{figure}
+
+        One last common side-effect is an enlarged heart (cardiomegaly). This can lead to heart failure and as I previously mentioned there's quite a few bodybuilders who died because of this
+        \footnote{\href{https://www.menshealth.com/trending-news/a19541843/bodybuilder-rich-piana-autopsy-report/}{Article on Rich Piana's death}}
+        \footnote{\href{https://www.dailytelegraph.com.au/news/nsw/bodybuilder-aziz-zyzz-shavershian-killed-by-heart-defect/news-story/57bbadf89f78c5d678d4df0c5b35d0d5}
+        {Zyzz dies from heart attack}}
+
+        Even with all these serious side-effects, a lot of people do end up using steroids or SARMS. In fact, most bodybuilders who compete use them and a lot of fitness '\textit{influencers}'
+        you see on instagram use them as well. Even actors who prepare to play certain muscular characters are using them. If you do decide to use them, it probably makes sense to talk to a
+        doctor first and get your blood tested throughout the process. You might also want to take supplements to protect your liver, heart etc.
+        \footnote{\href{https://www.htltsupps.com/collections/capsules/products/liver-support/}{Liver support supplements from HTLT Supps}}
+        \footnote{\href{https://theanabar.com/products/shield?variant=33058384969837/}{Shield from Anabar}}
+
+        One last point to make about steroids and SARMs is that they are illegal in a lot of countries, so people might buy them from dealers in the gym or from edgy websites. This usually means
+        that you might not be getting what you paid for. It also makes them rather expensive. There was a study done where they bought SARMs from various websites selling them and the result was that
+        only 30\% of the supplements contained what they actually say they contain.
+        \footnote{\href{https://ergo-log.com/20-sarm-supplements-tested.html}{20 SARM 'supplements' tested on ergo-log}}
+        Most of them were underdosed, some even had nothing in them, or containing other chemicals.
+
+        \subsection{Testosterone}
+        
+        Before talking more about anabolic steroids and SARMS, I just want to give a brief overview of testosterone. I mentioned before that testosterone plays an important role in building muscles.
+        Testosterone is the male sex hormone, it's produced by testicles for men and ovaries for women (women have testosterone too, just in much lower quantities).
+        The amount of testosterone in your body is measured in $ng/dL$, although sometimes you can find $nmol/L$ which can be converted to $ng/dL$ by multiplying the value with $28.85$.
+        The average male has between 300 and 1,000 $ng/dL$ while for women it's only between 15 and 70 $ng/dL$. The amount of testosterone your body produces also declines with age, but not
+        by much\footnote{\href{https://pubmed.ncbi.nlm.nih.gov/25295520/}{Article showing testosterone levels versus age for men}}. If the testosterone production gets too low it's possible to
+        do testosterone replacement therapy (TRT)
+        \footnote{\href{https://www.healthline.com/health/trt/}{TRT on Healthline}}, which is similar to taking anabolic steroids, but in much lower doses.
+        
+        If you want to know your level you need to get a blood test. For this you can talk to your doctor or check online (for example let's get checked
+        \footnote{\href{https://www.letsgetchecked.co.uk/}{Let's Get Checked website}}
+        provides these type of services, however it's rather expensive and cheaper to do it with your doctor)
+
+        \subsection{Anabolic Steroids}
+
+        Anabolic steroids are a type of artificial testosterone that you either inject in your body or take orally to increase your body's level of testosterone, usually in high doses.
+        When doing anabolic steroids to build muscle, people would get over 3,500 ng/dL testosterone inside their bodies
+        \footnote{\href{https://www.youtube.com/watch?v=Oml-f1yUz2w}{VitruvianPhysique on Testosterone on Youtube}}
+        \footnote{\href{https://www.youtube.com/watch?v=UKcEHtm8MFA}{VitruvianPhysique on Testosterone on Youtube, Part II}}
+        (compared to the 1,000 upper limit I previously mentioned). 
+
+        https://en.wikipedia.org/wiki/Testosterone_(medication)
+        https://www.healthline.com/health/anabolic-steroids#use
+        https://www.healthline.com/health/trt#non-medical-use
+        https://www.webmd.com/men/guide/testosterone-replacement-therapy-is-it-right-for-you
+        
+        Anabolic steroids:
+        oral: anadrol (oxymetholone), oxandrin (oxandrolone),
+           dianabol (methandrostenolone), winstrol (stanozolol)
+
+        injectable: deca-durabolin (nandrolone decanoate),
+        durabolin (nandrolone phenpropionate),
+        depo-testosterone (testosterone cypionate),
+        equipoise (boldenone undecylenate)
+        tetrahydrogestrinone (THG)
+
+        androstenedione, axiron, and fortesta
+
+        human growth hormone (hgh) - serious side effects
+
+        blood doping - increase vo2max / one's oxygen carrying
+        capacity => it does improve performance (cyclists do it)
+
+        DHEA
+
+        Diuretics
+
+        Ephedrine
         
 \end{document}
