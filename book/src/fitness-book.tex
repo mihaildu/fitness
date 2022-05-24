@@ -15,6 +15,9 @@
 % where images are stored
 \graphicspath{{src/images/}}
 
+% to use \FloatBarrier
+\usepackage[section]{placeins}
+
 \title{
   Introduction to Fitness \\
   \vskip 0.5cm
@@ -32,10 +35,10 @@
 	I have no background in fitness or nutrition. In school I studied Computer Science and now I work as a Software Engineer. What made me get more 
 	into fitness was my weight: I was fat. Multiple times in my life. First, growing up as a kid I was fat and I managed to lose the weight in 
 	secondary school just by eating less. Second time I got fat was in university, just because I lacked any motivation to study for exams and would
-	power my way through with food and energy drinks. After uni I found it much harder to lose weight than I previously knew. I would follow a lot 
-	of diets (keto\footnote{\href{https://en.wikipedia.org/wiki/Ketogenic_diet}{Ketogenic Diet on Wikipedia}}, food replacement like 
-	soylent\footnote{\href{https://en.wikipedia.org/wiki/Soylent_(meal_replacement)}{Soylent on Wikipedia}} or 
-	huel\footnote{\href{https://en.wikipedia.org/wiki/Huel}{Huel on Wikipedia}}), sometimes going really low in calories intake, feeling like I 
+	power my way through with food and energy drinks. After uni I found it much harder to lose weight than I previously knew. I would follow a lot  of diets (keto
+        \footnote{\href{https://en.wikipedia.org/wiki/Ketogenic_diet}{Ketogenic Diet on Wikipedia}}, food replacement like soylent
+        \footnote{\href{https://en.wikipedia.org/wiki/Soylent_(meal_replacement)}{Soylent on Wikipedia}} or huel
+        \footnote{\href{https://en.wikipedia.org/wiki/Huel}{Huel on Wikipedia}}), sometimes going really low in calories intake, feeling like I 
 	have no energy and gaining the weight back on after ending the diet. I needed a better solution to this: I decided to start going to the gym.
 	
 	I guess my goal was to build muscle and lose fat. I've always liked muscles as a kid, just never got the time to look into it and start
@@ -61,8 +64,8 @@
 	The book is structured in two parts: nutrition \& workout. There is a lot of information in here, you don't necessarily need to understand all of it
 	to get going. That's why at the end I just added an example of everything I did to get in my current shape without extra explanations. I will try 
 	my best to present information in an unbiased way, presenting what people think works and what not, what I tried on myself etc. If you think 
-	something is wrong or don't agree with some of the information presented here, this is an open source book so feel free to submit a 
-	PR!\footnote{\href{https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/about-pull-requests}
+	something is wrong or don't agree with some of the information presented here, this is an open source book so feel free to submit a PR!
+        \footnote{\href{https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/about-pull-requests}
 	{About Pull Requests on Github Docs}} At the end of the day I am a practical person, I only believe in results and what works in real life. 
 	I can say that the information I describe in this book worked really well on me, as you can see in the picture below.
 	
@@ -78,10 +81,11 @@
   
   	\section{Calories, BMR, TDEE}
   	
-	I feel like I need to explain how food works first before anything else. Your body is an energy convertor. It gets energy from
-        food\footnote{\href{https://en.wikipedia.org/wiki/Food_energy}{Food Energy on Wikipedia}} and converts it to heat, movement (kinetic energy) and 
+	I feel like I need to explain how food works first before anything else. Your body is an energy convertor. It gets energy from food
+        \footnote{\href{https://en.wikipedia.org/wiki/Food_energy}{Food Energy on Wikipedia}} and converts it to heat, movement (kinetic energy) and 
 	electrical energy for thinking. The amount of energy needed without movement (so for heat, thinking and perhaps others things too) is referred 
-	to as basal metabolic rate or BMR\footnote{\href{https://en.wikipedia.org/wiki/Basal_metabolic_rate}{Basal Metabolic Rate on Wikipedia}} and it
+	to as basal metabolic rate or BMR
+        \footnote{\href{https://en.wikipedia.org/wiki/Basal_metabolic_rate}{Basal Metabolic Rate on Wikipedia}} and it
 	doesn't change much from day to day. If you include the energy for movement too you get your total daily energy expenditure or TDEE. If you eat
 	more than your TDEE in a day, the extra food will be stored on your body either as fat or muscle. If you eat less then your body will have to go
 	to fat stores and muscles and break them down to get the extra food energy you need. Energy is measured in $kcal$, but most of the time you will
@@ -95,13 +99,13 @@
 	
 	People have tried to come up with formulas to compute BMR from different factors, such as height, age, sex or body fat percentage (this is just
 	the proportion of fat you have in your body relative to your whole mass, so 100 $\times$ fat mass / body mass). At first only mass (m), height (h) 
-	and age (a) were taken into account in Harris-Benedict formula for BMR from 1919\footnote{\href{
-	https://en.wikipedia.org/wiki/Harris\%E2\%80\%93Benedict_equation}{Harris-Benedict on Wikipedia}}
+	and age (a) were taken into account in Harris-Benedict formula for BMR from 1919
+        \footnote{\href{https://en.wikipedia.org/wiki/Harris\%E2\%80\%93Benedict_equation}{Harris-Benedict on Wikipedia}}
 	\begin{equation}
 		BMR = 13.7516m + 5.0033h - 6.755a + 66.4730
 	\end{equation}
-  	This formula was later revised in 1984 with just a few minor changes. Later in 1990 Mifflin St
-        Jeor\footnote{\href{https://pubmed.ncbi.nlm.nih.gov/2305711/}{A new predictive equation for resting energy expenditure in healthy individuals (1990)}}
+  	This formula was later revised in 1984 with just a few minor changes. Later in 1990 Mifflin St Jeor
+        \footnote{\href{https://pubmed.ncbi.nlm.nih.gov/2305711/}{A new predictive equation for resting energy expenditure in healthy individuals (1990)}}
         came with 2 formulas for BMR, one for men (\ref{males}) and one for women (\ref{females}).
 	\begin{equation}
 		\label{males}
@@ -111,13 +115,15 @@
 		\label{females}
 		BMR (females) = 10m + 6.25h - 5a - 161
 	\end{equation}
-	Finally Katch-McArdle\footnote{\href{https://books.google.co.uk/books/about/Essentials_of_Exercise_Physiology.html?id=L4aZIDbmV3oC}{Essentials of Exercise Physiology Book by Katch \& McArdle (2006)}}
+	Finally Katch-McArdle
+        \footnote{\href{https://books.google.co.uk/books/about/Essentials_of_Exercise_Physiology.html?id=L4aZIDbmV3oC}{Essentials of Exercise Physiology Book by Katch \& McArdle (2006)}}
         included body fat percentage (f) into the equation, removing age and height
 	\begin{equation}
 		BMR = 370 + (21.6m (1 - \frac{f}{100}))
 	\end{equation}
 	This is an interesting point because body fat percentage does affect how many calories you burn even at rest. The rule I know is that 10 pounds of muscle would burn 50 kcal in a day at rest,
-        while 10 pounds of fat will only burn 20 kcal\footnote{\href{https://www.webmd.com/diet/obesity/features/8-ways-to-burn-calories-and-fight-fat}{Burning Calories on WebMD}} (less than half),
+        while 10 pounds of fat will only burn 20 kcal
+        \footnote{\href{https://www.webmd.com/diet/obesity/features/8-ways-to-burn-calories-and-fight-fat}{Burning Calories on WebMD}} (less than half),
         so if you're 80kg with 15\% body fat you will burn more calories at rest than someone who is 80kg with 20\% body fat. This also explains the Mifflin St Jeor above, since women have naturally
         more fat than men.
 	
@@ -130,12 +136,14 @@
 	
 	In theory you should be able to tell your TDEE without having
 	to change your diet again just by looking at how much weight you gained / lost in the initial 1-2 weeks: you should lose 1lb (or 0.45kg) of mass at 
-	a total deficit of 3500 calories\footnote{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2376744/}{What is the Required Energy Deficit per 
+	a total deficit of 3500 calories
+        \footnote{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2376744/}{What is the Required Energy Deficit per 
 	unit Weight Loss? (2008)}}. Let's take an example again: you ate 2,000 calories for 2 weeks. During these 2 weeks you gained 2.2lbs (or 1kg) on the
 	scale. According to the 3500 rule, you were at a total surplus of $3500 \times 2.2 = 7700$ calories. This surplus was achieved in 14 days, so the
 	surplus each day was 550 calories. This means your actual TDEE is 2,550 calories. However I found this rule to not work on me, trying to adjust 
 	accordingly didn't put me at maintenance and I kept changing weight. As long as you always adjust to results you will be fine. I would personally
-	start with an online TDEE calculator\footnote{\href{https://tdeecalculator.net/}{Example of online TDEE calculator}} (there are plenty out there) 
+	start with an online TDEE calculator
+        \footnote{\href{https://tdeecalculator.net/}{Example of online TDEE calculator}} (there are plenty out there) 
 	just to get a value to work with, then keep adjusting intake until I hit my maintenance.
 	
 	\section{Body Fat Percentage}
@@ -144,14 +152,16 @@
         The more fat you have on you the less visible your muscles will be. However, just taking the absolute value of fat mass is not a good indicator of how well
         your muscles are showing, since taller people will have more fat mass but more body surface to spread it across. So instead we can look at the proportion of
         fat in relation to muscles. The body fat percentage will normally dictate certain features you can see on your body, for example the average guy will have his
-        abdominal muscles ("abs") showing around 10-14\% body fat\footnote{\href{https://www.healthline.com/health/body-fat-percentage-for-abs}{Healthline Article on Abs}}.
-        To better understand what I'm talking about look at the image below that I found on
-        builtlean.com\footnote{\href{https://www.builtlean.com/body-fat-percentage-men-women/}{Body Fat Percentage Photos Of Men \& Women}}. I cannot confirm the numbers to be
+        abdominal muscles (``abs'') showing around 10-14\% body fat
+        \footnote{\href{https://www.healthline.com/health/body-fat-percentage-for-abs}{Healthline Article on Abs}}.
+        To better understand what I'm talking about look at the image below that I found on builtlean.com
+        \footnote{\href{https://www.builtlean.com/body-fat-percentage-men-women/}{Body Fat Percentage Photos Of Men \& Women}}. I cannot confirm the numbers to be
         correct but they give a good indication in my opinion to what body fat percentage looks like at different values (note that lower body fat percentage will not give you
         bigger muscles, it just happens to be the case in the pictures). Usually people say that an ideal body fat \% (both in terms of health and looks) is around 12\% for men
         and around 24\% for women. Another thing to keep in mind is that your genetics will influence how low in body fat \% you can get. For some men reaching 5\% might be
         impossible without taking steroids for example. Also going under 10\% is usually not considered healthy anymore, a lot of people complain about mood, sleep and even sex
-        drive problems once you are that low in body fat \%\footnote{\href{https://www.youtube.com/watch?v=IHvmtvzOfDg}{VitruvianPhysique on Optimal Body Fat \% on Youtube}}. 
+        drive problems once you are that low in body fat \%
+        \footnote{\href{https://www.youtube.com/watch?v=IHvmtvzOfDg}{VitruvianPhysique on Optimal Body Fat \% on Youtube}}. 
 	
 	\begin{figure}[h]
 		\centering
@@ -160,10 +170,10 @@
 	\end{figure}
 	
 	Computing body fat percentage is not easy. There is no 100\% accurate way of doing it. You can take pictures of yourself in the mirror and then compare with the images above,
-        a lot of people estimate this way and I find it good as well. If you want a more accurate way of doing it though, there are a few options out there. The most accurate way is an
-        MRI scan\footnote{\href{https://pubmed.ncbi.nlm.nih.gov/9655763/}{Cadaver validation of skeletal muscle measurement by magnetic resonance imaging and computerized tomography}}.
-        However this is not available to the public as far as I know. This leaves us with the second most accurate option I know, which is a DEXA
-        scan\footnote{\href{https://en.wikipedia.org/wiki/Dual-energy_X-ray_absorptiometry}{DEXA on Wikipedia}}. This is a machine that does an x-ray scan of your body. It shows quite some details,
+        a lot of people estimate this way and I find it good as well. If you want a more accurate way of doing it though, there are a few options out there. The most accurate way is an MRI scan
+        \footnote{\href{https://pubmed.ncbi.nlm.nih.gov/9655763/}{Cadaver validation of skeletal muscle measurement by magnetic resonance imaging and computerized tomography}}.
+        However this is not available to the public as far as I know. This leaves us with the second most accurate option I know, which is a DEXA scan
+        \footnote{\href{https://en.wikipedia.org/wiki/Dual-energy_X-ray_absorptiometry}{DEXA on Wikipedia}}. This is a machine that does an x-ray scan of your body. It shows quite some details,
         for example the lean mass and fat mass in your arms, trunk (core) and legs. You can see an example of a DEXA scan result below.
 
 	\begin{figure}[h]
@@ -172,18 +182,22 @@
 		\caption{Result of a DEXA scan, showing body fat for different body parts}
 	\end{figure}
         
-        However, DEXA scans can have errors too, and a lot of people talk against it\footnote{\href{https://www.youtube.com/watch?v=2Gg4Jm5KS1Y}{Greg Doucette on DEXA Scans on Youtube}}
+        However, DEXA scans can have errors too, and a lot of people talk against it
+        \footnote{\href{https://www.youtube.com/watch?v=2Gg4Jm5KS1Y}{Greg Doucette on DEXA Scans on Youtube}}
         \footnote{\href{https://www.youtube.com/watch?v=P17bcpYE8Ew}{Brain Shaw on DEXA Scans on Youtube}}. The scan is also expensive, I did it in London at bodyscan for roughly \pounds 100.
 	
-	Before DEXA scans, hydrostatic weighing\footnote{\href{https://en.wikipedia.org/wiki/Hydrostatic_weighing}{Hydrostatic Weighing on Wikipedia}} was considered the most accurate method
+	Before DEXA scans, hydrostatic weighing
+        \footnote{\href{https://en.wikipedia.org/wiki/Hydrostatic_weighing}{Hydrostatic Weighing on Wikipedia}} was considered the most accurate method
         available to the public. You had to step on a scale underwater and the value you get helps estimate your body density, which can be used to approximate your body fat percentage.
-        Another way of estimating body fat percentage which is similar to hydrostatic weighing is whole-body air displacement
-        plethysmography\footnote{\href{https://en.wikipedia.org/wiki/Air_displacement_plethysmography}{Air Displacement Plethysmography on Wikipedia}} (for example
-        Bod Pod\footnote{\href{https://www.cosmed.com/en/products/body-composition/bod-pod}{Bod Pod}}).
+        Another way of estimating body fat percentage which is similar to hydrostatic weighing is whole-body air displacement plethysmography
+        \footnote{\href{https://en.wikipedia.org/wiki/Air_displacement_plethysmography}{Air Displacement Plethysmography on Wikipedia}} (for example Bod Pod
+        \footnote{\href{https://www.cosmed.com/en/products/body-composition/bod-pod}{Bod Pod}}).
 	
-	More common methods of estimating body fat are the skinfold methods\footnote{\href{https://en.wikipedia.org/wiki/Body_fat_percentage\#Anthropometric_methods}{Skinfold Methods on Wikipedia}}
-        (using a device called caliper) and using bioelectrical impedance analysis\footnote{\href{https://en.wikipedia.org/wiki/Bioelectrical_impedance_analysis}{Bioelectrical Impedance
-          Analysis on Wikipedia}}. The first method tries to determine the thickness of the fat layer under the skin. You use the caliper at various spots on the body and look up the measurement in
+	More common methods of estimating body fat are the skinfold methods
+        \footnote{\href{https://en.wikipedia.org/wiki/Body_fat_percentage\#Anthropometric_methods}{Skinfold Methods on Wikipedia}}
+        (using a device called caliper) and using bioelectrical impedance analysis
+        \footnote{\href{https://en.wikipedia.org/wiki/Bioelectrical_impedance_analysis}{Bioelectrical Impedance Analysis on Wikipedia}}.
+        The first method tries to determine the thickness of the fat layer under the skin. You use the caliper at various spots on the body and look up the measurement in
         a table which will tell you the estimated body fat. It's best if you use a personal trainer or someone with experience to perform the reading. For bioelectrical impedance analysis a small
         electric current is sent through the body and the resistance of the whole body is computed, which depends on body fat percentage. Some scales also state they can compute body fat percentage
         just from your weight, height, age and sex. However this is not really possible unless you don't train at all and the extra weight comes from fat alone. Just to recap all the methods
@@ -210,14 +224,14 @@
 	body can convert carbs and proteins into fat to store on your body as fuel for future days, but it cannot convert back fat to carbs or proteins. It's worth mentioning that
 	fats and carbs cannot be converted to proteins either, so for building muscles you need proteins from food alone, since there's no way to store proteins on your body. 
 	
-	There are different theories that you should eat this many grams of carbs and this many grams of fat. One such example is the zone 
-	diet\footnote{\href{https://www.healthline.com/nutrition/zone-diet}{The Zone Diet on Healthline}}. This says you should eat 40\% carbs, 30\% fat and 30\% protein. For example,
+	There are different theories that you should eat this many grams of carbs and this many grams of fat. One such example is the zone diet
+        \footnote{\href{https://www.healthline.com/nutrition/zone-diet}{The Zone Diet on Healthline}}. This says you should eat 40\% carbs, 30\% fat and 30\% protein. For example,
 	if you need to eat 2,000 calories a day and want to follow the zone diet, you should aim to eat 145.5g of carbs (582kcal), 109g of fat (981kcal) and 109g of protein (436kcal).
-	However, from my experience it doesn't really matter how you split carbs and fat, it's just a matter of preference. At the end of the day it's calories in and calories out that
-	matters\footnote{\href{https://www.youtube.com/watch?v=ssmJ50HRTp8}{Greg Doucette on Macros on Youtube}}. You should pick a diet you feel comfortable with, so if you like carbs
+	However, from my experience it doesn't really matter how you split carbs and fat, it's just a matter of preference. At the end of the day it's calories in and calories out that matters
+        \footnote{\href{https://www.youtube.com/watch?v=ssmJ50HRTp8}{Greg Doucette on Macros on Youtube}}. You should pick a diet you feel comfortable with, so if you like carbs
         just eat more carbs, if you like fat just eat more fat. It does matter how much protein you have though, since it's the only thing your body can use for muscle growth. A common
-        recommendation for building muscles is to eat 1g of protein per pound of body weight, or 2.2g per
-        kg\footnote{\href{https://www.healthline.com/nutrition/how-much-protein-per-day}{Protein Intake on Healthline}}. For example, if you weight 70kg you should eat 154g of protein every day.
+        recommendation for building muscles is to eat 1g of protein per pound of body weight, or 2.2g per kg
+        \footnote{\href{https://www.healthline.com/nutrition/how-much-protein-per-day}{Protein Intake on Healthline}}. For example, if you weight 70kg you should eat 154g of protein every day.
 	If you really want to try and follow a certain macro split, you might want to compute how many grams of carbs, fat and protein to consume based on their percentage. I know
 	I had to compute this when I was trying to follow certain percentages. To make your life easier you can plug in your values into the formulas below. The value $c$ is the 
 	percentage of carbs, $f$ is percentage of fat, $p$ is percentage of protein and $T$ is the total caloric intake:
@@ -253,8 +267,8 @@
         bums, arms and breasts while men will store most fat around their belly. I have a pretty unfortunate fat distribution, since I store fat the same way women do, I get a lot on arms,
 	legs, bum and even around breasts. I used to think this is due to hormonal imbalances (maybe too much estrogen and too low testosterone) but it turns out this is not the case,
 	since my testosterone levels are really high and estrogen really low. From what I've read, the fat distribution is influenced by fat cell receptors: alpha-2 and beta receptors.
-	The beta receptors will release fat while the alpha-2 will stall it, so the ratio of alpha-2 to beta receptors will dictate how you lose or gain fat in different places on your
-	body\footnote{\href{https://www.youtube.com/watch?v=GbqN2sj8XyY}{VitruvianPhysique on Body Fat Distribution on Youtube}}
+	The beta receptors will release fat while the alpha-2 will stall it, so the ratio of alpha-2 to beta receptors will dictate how you lose or gain fat in different places on your body
+        \footnote{\href{https://www.youtube.com/watch?v=GbqN2sj8XyY}{VitruvianPhysique on Body Fat Distribution on Youtube}}
         \footnote{\href{https://www.youtube.com/watch?v=X_GeSVbAU3U}{VitruvianPhysique on Body Fat Distribution Part 2 on Youtube}}. 
 	I don't know much more about it, but it seems to be purely genetic. The important thing to remember here is that you cannot control how your body stores or burns fat and from
 	which areas. This is also what people mean when they say that losing fat is not site specific, you cannot burn fat from your belly just by doing crunches. Your body will decide
@@ -285,8 +299,8 @@
         To get rid of the excess fat you need to put yourself at a caloric deficit when you try to burn the fat stores while keeping the muscles you gained. This phase is called cutting. Bulking
         and cutting are normal cycles for bodybuilders, they will bulk, cut, bulk, cut and so on. There are instances when you can build muscles and cut down fat at the same time, I experienced this on
         myself when I started training again after a 3 months absence. I've read that it can also happen when you start training for the first time or if you take steroids, but more on steroids later.
-        Building muscles and losing fat at the same time is also referred to as body recomposition\footnote{\href{https://www.healthline.com/nutrition/body-recomposition\#how-it-works}{Healthline
-          Article on Body Recomposition}}.
+        Building muscles and losing fat at the same time is also referred to as body recomposition
+        \footnote{\href{https://www.healthline.com/nutrition/body-recomposition\#how-it-works}{Healthline Article on Body Recomposition}}.
 	
 	If you keep training (e.g. lifting weights) while cutting, your body will value your muscles more than the fat, so it will rather use fat to get the extra energy it needs. This is an
         oversimplified explanation of how everything works, in reality it's more complex than this. A different explanation would be this: the body has workers that take macronutrients (carbs, fat \&
@@ -295,28 +309,28 @@
         rebuild the muscles you might be able to use all the proteins you get to gain muscles while the body will have to go to fat stores to get all the energy, so basically building muscles and
         losing fat at the same time. I've seen this analogy of testosterone with construction workers used a lot in fitness. 
 	
-	Knowing your TDEE, what is the caloric surplus you should aim for during a bulking phase? Most people seem to go 10-20\% more for what's considered a
-        "lean bulk"\footnote{\href{https://www.youtube.com/watch?v=rCdba0UPTMk}{VitruvianPhysique on Lean Bulking on Youtube}}
+	Knowing your TDEE, what is the caloric surplus you should aim for during a bulking phase? Most people seem to go 10-20\% more for what's considered a ``lean bulk''
+        \footnote{\href{https://www.youtube.com/watch?v=rCdba0UPTMk}{VitruvianPhysique on Lean Bulking on Youtube}}
         \footnote{\href{https://us.myprotein.com/thezone/nutrition/the-lean-bulk-how-to-minimize-fat-gain-while-bulking/}{Lean Bulk on Myprotein website}}
         \footnote{\href{https://www.youtube.com/watch?v=Ci3qXtNFU_w}{Mike Thurston on Lean Bulking on Youtube}}.
-        For example if your TDEE is 2,500 calories a day, you should eat 2,750 - 3,000 calories to lean bulk. If you go more than that it's considered a "dirty bulk" in which you gain more fat than
+        For example if your TDEE is 2,500 calories a day, you should eat 2,750 - 3,000 calories to lean bulk. If you go more than that it's considered a ``dirty bulk'' in which you gain more fat than
         you should. This happens because there is a limit to how much muscle you can gain. Eating more might make you feel stronger, however strength and muscle growth are not perfectly correlated,
         but more on this later. Doing a dirty bulk means you'll be spending more time to cut the fat afterwards. It can also make you feel like shit, eating this much and dieting for so long.
         Sure it might give you more energy in the gym and make you even stronger but it all depends on what you want to achieve. If you want to stay in shape all of the time then it's probably not for you,
         since the only time you'll be in shape is at the end of a cut for a short period of time. A lot of people speak against dirty bulks
         \footnote{\href{https://www.youtube.com/watch?v=DjEnkzhz5T4}{Greg Doucette on Bulking and Cutting on Youtube}}
         \footnote{\href{https://www.youtube.com/watch?v=xl0ZNFcvuJI}{Greg Doucette on Bulking on Youtube}} and I don't approve of them myself since I tried it once --- I felt like crap, out of shape and
-        it made no sense to me since losing fat was one of the main reasons I got into this. You might also experience stretch marks on dirty bulks if you gain weight too
-        fast\footnote{\href{https://www.bodybuilding.com/content/stretchmark-maintenance.html}{Article on Stretchmarks on Bodybuilding.com}}. One mistake I notice people make when bulking is that they
-        fall into thinking that overeating junk food is fine, since they are bulking anyway. I made this mistake myself as well. You should still "diet" and track your calories and weight accordingly,
+        it made no sense to me since losing fat was one of the main reasons I got into this. You might also experience stretch marks on dirty bulks if you gain weight too fast
+        \footnote{\href{https://www.bodybuilding.com/content/stretchmark-maintenance.html}{Article on Stretchmarks on Bodybuilding.com}}. One mistake I notice people make when bulking is that they
+        fall into thinking that overeating junk food is fine, since they are bulking anyway. I made this mistake myself as well. You should still ``diet'' and track your calories and weight accordingly,
         and have cheat days if you really feel like eating junk food.
 	
 	How much should you eat when cutting down? The same holds true as for bulking, you should aim to eat 10-20\% less than you need every day. For a TDEE of 2,500 calories you should eat
         2,000 - 2,250 calories. If you lose weight too fast there is the risk of losing muscles too, and you don't want this to happen since you worked so hard to gain them in the first place. 
 	What many consider a good and safe pace to lose weight is 0.45-0.9kg per week (or 1-2 pounds)
         \footnote{\href{https://www.healthline.com/nutrition/losing-weight-too-fast}{Losing Weight too Fast on Healthline}}. The idea is that if you eat too little, your body will go into shock and
-        try to use anything it can to keep you alive, including muscle stores. Transitioning from a bulk to a cut (and the other way around) should always happen gradually, to give your body time to
-        accommodate\footnote{\href{https://www.ironbuiltfitness.com/transition-from-cutting-to-bulking}{Transitioning from Bulking to Cutting on ironbuiltfitness.com}}. 
+        try to use anything it can to keep you alive, including muscle stores. Transitioning from a bulk to a cut (and the other way around) should always happen gradually, to give your body time to accommodate
+        \footnote{\href{https://www.ironbuiltfitness.com/transition-from-cutting-to-bulking}{Transitioning from Bulking to Cutting on ironbuiltfitness.com}}. 
 	I noticed this on myself, I increased my caloric intake by more than 1,000 all of a sudden and I gained quite a bit of fat in a short amount of time. I would
 	personally go back to maintenance and stay there for 1-2 weeks before starting to lean bulk.
 	
@@ -344,15 +358,16 @@
         BMR can actually change for the same individual at the same mass and body fat percentage. Remember when I said that the energy your body needs to produce heat makes up most of
         BMR's value? It turns out your body can change how much heat it produces (this has nothing to do with your body's temperature, you just radiate more or less heat in the surrounding
         environment) which can affect BMR. This happens usually if you are at a caloric deficit or surplus for a longer period of time, your body will try to adapt to your new intake. This
-        process is called adaptive thermogenesis\footnote{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3673773/}{Adaptive Thermogenesis in Humans Article}}, or
-        metabolic damange\footnote{\href{https://www.youtube.com/watch?v=bLboowVr2DM}{VitruvianPhysique on Metabolic Damage on Youtube}}
+        process is called adaptive thermogenesis
+        \footnote{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3673773/}{Adaptive Thermogenesis in Humans Article}}, or metabolic damange
+        \footnote{\href{https://www.youtube.com/watch?v=bLboowVr2DM}{VitruvianPhysique on Metabolic Damage on Youtube}}
         \footnote{\href{https://www.youtube.com/watch?v=VVF64oQ3yZk}{Greg Doucette on Metabolic Damage on Youtube}}.
 
         If BMR adjusts to your diet then how can you ever lose weight? This is not as bad as it sounds and it won't keep you from losing weight. From my experience, this metabolic damage is
         not enough to keep you from losing weight. The BMR changes are really slow and there is always a limit to how low it can get. Notice that as you lose weight you'll also burn less
         calories for movement since you have less mass, so to keep a steady weight loss pace you need to continuously adapt either your diet or your cardio. Eating less also means less
-        calories burned, since it takes a bit of energy for your body to process the food you eat. This is called the thermic effect of
-        food\footnote{\href{https://en.wikipedia.org/wiki/Specific\_dynamic\_action}{Thermic effect of food on wikipedia}}. You can see the energy required to break down carbs, proteins and
+        calories burned, since it takes a bit of energy for your body to process the food you eat. This is called the thermic effect of food
+        \footnote{\href{https://en.wikipedia.org/wiki/Specific\_dynamic\_action}{Thermic effect of food on wikipedia}}. You can see the energy required to break down carbs, proteins and
         fats in Table \ref{table1}. This is usually one of the reason people recommend food high in protein for diets, since they have less calories than advertised. The fact that it takes a lot of
         energy to break them down should also make you feel satiated for longer period of time. I will discuss high protein diets later in the book. 
         Going back to metabolic damage, the good news is that it's not permanent
@@ -384,7 +399,8 @@
 
         \section{Intermittent Fasting}
 
-        You might have heard of Intermittent Fasting\footnote{\href{https://www.healthline.com/nutrition/intermittent-fasting-guide}{Intermittent Fasting on Healthline}}
+        You might have heard of Intermittent Fasting
+        \footnote{\href{https://www.healthline.com/nutrition/intermittent-fasting-guide}{Intermittent Fasting on Healthline}}
         before. This is a diet where you allow yourself to eat only in a specific time interval (for example from 1pm until 9pm --- this means skipping breakfast).
         I've heard many people saying how good this diet is for losing weight. A diet like this could work because it's harder to overeat in the 8h you are allowed to.
         I tried it in the past too and found it good for me. In my case it worked because I find it easier to stay hungry in the morning --- I usually drink 1-2 cups of coffee
@@ -393,19 +409,21 @@
         stores are depleted, so maybe while doing a keto diet). Personally I don't think it really matters when you exercise, as long as you are at an overall deficit, and it
         might be easier to exercise after you had something to eat. The thing that I realised however is that if you train to build muscle, intermittent fasting might
         not be the best option for you. When you lift weights you damage the muscle, so a repair process will start to take place, also known as muscle protein synthesis.
-        This process is known to take up to 36h\footnote{\href{https://pubmed.ncbi.nlm.nih.gov/8563679/}{The time course for elevated muscle protein synthesis following heavy resistance exercise}},
-        or even 48h\footnote{\href{https://pubmed.ncbi.nlm.nih.gov/11255140/}{Exercise, protein metabolism, and muscle growth}}. While your muscles are being repaired, you
+        This process is known to take up to 36h
+        \footnote{\href{https://pubmed.ncbi.nlm.nih.gov/8563679/}{The time course for elevated muscle protein synthesis following heavy resistance exercise}}, or even 48h
+        \footnote{\href{https://pubmed.ncbi.nlm.nih.gov/11255140/}{Exercise, protein metabolism, and muscle growth}}. While your muscles are being repaired, you
         neeed to have proteins available in your stomach to go on the muscle. This is why it's recommended to eat something high in protein before going to bed (preferably casein
         protein, which is slow digesting) and also in the morning (whey protein, which is fast digesting). If you skip breakfast and you stay on empty stomach for too long
         then the muscle protein synthesis process will not be optimal. After I realized this I stopped doing intermittent fasting even when cutting down. Some bodybuilders
-        also speak against it if you're trying to build muscle\footnote{\href{https://www.youtube.com/watch?v=cMZ8Ijq-6Do}{Greg Doucette on Fasting on Youtube}}.
+        also speak against it if you're trying to build muscle
+        \footnote{\href{https://www.youtube.com/watch?v=cMZ8Ijq-6Do}{Greg Doucette on Fasting on Youtube}}.
 
         \section{Tracking Calories, Meal Prep, Cooking}
 
         So now you know your TDEE, you know whether you want to bulk or cut, so you have a caloric intake goal. To hit this goal you have to start counting how much you eat
         every day (as I've said before, I would advice against estimating this, since big errors will make it impossible for you to hit your goal). You can track in multiple
-        ways, for example you can read the label of everything you eat and just write it down somewhere. You can also use a phone app to help you with that (for example
-        myfitnesspal\footnote{\href{https://www.myfitnesspal.com/}{MyFitnessPal website}} has such a feature). For me this seemed like a big burden, to always remember to log
+        ways, for example you can read the label of everything you eat and just write it down somewhere. You can also use a phone app to help you with that (for example myfitnesspal
+        \footnote{\href{https://www.myfitnesspal.com/}{MyFitnessPal website}} has such a feature). For me this seemed like a big burden, to always remember to log
         every meal and make sure I hit my calories for the day. An alternative would be to make a meal plan: you plan your meals for the week, you cook in advance and then you
         don't need to track anymore. This option worked really well for me, and I felt like it saved me a lot of time and money. However, not everyone enjoys doing this, making a meal
         plan is not straightforward, takes time to perfect and unless you try really hard to diversify it, it could feel a bit boring to eat the same dishes every day. You can
@@ -420,8 +438,8 @@
         I'm done. I then proceed to test my meal plan in the following week: do I lose or gain the correct amount of weight? Am I happy with my meal plan? Do I enjoy the meals?
         Does it keep me full and not hungry all the time? If the answer is yes to all these questions, then I'm lucky and I just made the perfect meal plan. If not, then I 
         keep adjusting it, swapping food until I can answer yes to all the questions.
-        I made a copy of my meal plan calculator spreadsheet available for everyone online
-        at\footnote{\href{https://docs.google.com/spreadsheets/d/1DPH4OQuc6yQf3TdUI1D3m1t4UGaiRP1ptWh5f9Y9Y2U/edit?usp=sharing}{Meal Plan Calculator on Google Spreadsheets}}.
+        I made a copy of my meal plan calculator spreadsheet available for everyone online at
+        \footnote{\href{https://docs.google.com/spreadsheets/d/1DPH4OQuc6yQf3TdUI1D3m1t4UGaiRP1ptWh5f9Y9Y2U/edit?usp=sharing}{Meal Plan Calculator on Google Spreadsheets}}.
         You can copy that spreadsheet to a private one for yourself to edit. Just update the $Food$ column with the food you like, add the macros, add your goals on the
         bottom right then keep adjusting the units in the calculator until you hit your goals! You can see a picture of the meal plan calculator below (Figure \ref{fig2}) and 
         also an example of a day meal plan I made using it for cutting down (Figure \ref{fig3}).
@@ -454,8 +472,8 @@
         Cooking the food is not as hard as you might think. If you're not pretentious with your food then it doesn't require any cooking skills at all. I will describe the way
         I do it, which I think is really fast and for me it tastes good too. In my cutting meal plan I have a few dishes that require cooking: the classic chicken,
         rice and broccoli dish, salmon with bread, vegetables and eggs. I usually buy frozen broccoli/vegetables so I just need to heat them up in the microwave before eating.
-        This means I still have to cook the rice, chicken breast, salmon and eggs. For both the chicken breast and salmon I use a slow cooker. Slow
-        cookers\footnote{\href{https://crockpot.co.uk/}{Crock-Pot slow cookers}} are great devices
+        This means I still have to cook the rice, chicken breast, salmon and eggs. For both the chicken breast and salmon I use a slow cooker. Slow cookers
+        \footnote{\href{https://crockpot.co.uk/}{Crock-Pot slow cookers}} are great devices
         if you don't have time to cook. They are also really cheap (\textsterling 20-\textsterling 30). I find them an alternative to microwave: instead of buying already 
         cooked meals you can buy frozen
         food instead, throw it in the slow cooker in a similar way you do with the microwave, and later just take it out and it's ready to eat. It does take a rather long time 
@@ -469,14 +487,15 @@
         so I now put it for 5h (usually overnight) only. After the chicken breast is cooked I just
         split it into 5 portions (for Monday to Friday). I use a kitchen scale to split it as equal as possible, but sometimes I don't have time for this so I just eyeball it.
         I do the same with the salmon (500g in my case). I don't add any water to the salmon, it has a lot of grease so it will cook just fine. I don't use seasoning but you
-        can use if you really want. I use Frank's Red Hot sauce\footnote{\href{https://www.franksredhot.com/}{Frank's Red Hot Website}} with my meals instead of seasoning.
+        can use if you really want. I use Frank's Red Hot sauce
+        \footnote{\href{https://www.franksredhot.com/}{Frank's Red Hot Website}} with my meals instead of seasoning.
         The sauce has almost no calories --- it's like liquid salt with a bit of spice. If you don't like spicy, you can probably find low calories sauces out there for your
         taste. I cook the eggs and rice at the same time using a rice cooker. I know how many cups of rice I need to hit the amount I have in my spreadsheet. I did the
         measurements once and and ended up being around 3 cups for 5 days. I rinse (a fancy word for washing) the rice, add it to the rice cooker and add water (in my case I use
         2 cups of water per cup of rice, so 6 cups of water in total). My rice cooker came with a steam tray, so I place 10 eggs (I eat 2 each day) in this steam tray and turn on
         the rice cooker. I leave the eggs for about 18min for the perfect consistency (I like the yolk a bit runny). The rice cooker stops automatically after the rice is cooked.
-        It normally takes around 40min. After this is done I split it again into 5 portions using the kitchen scale. I split the food I cook into
-        tupperware\footnote{\href{https://igluumealprep.com/}{You can buy meal prep containers online}} and put it in the
+        It normally takes around 40min. After this is done I split it again into 5 portions using the kitchen scale. I split the food I cook into tupperware
+        \footnote{\href{https://igluumealprep.com/}{You can buy meal prep containers online}} and put it in the
         fridge for the entire week. For some of you, eating a meal 5 days after it was cooked might be too much, but personally I had no issues. Yes, the food tastes much better
         early in the week (the rice is fluffier and the chicken breast more tender) and not so great on a Friday. However, I don't really have time to cook midweek. Even if it
         sounds like a lot of steps, I actively spend only 1-2h each Sunday to cook for the entire week and with enough Frank's Red Hot the food tastes amazing to me. It's more
@@ -493,17 +512,20 @@
         the fitness industry advocating meals high in protein and fiber. The idea is that both proteins and fiber take a long time to digest, so you will not feel hungry while
         this process is happening, even if you don't eat that many calories. I discussed this previously when I talked about the thermic effect of food.
         I tried cooking meals high in protein and I agree that some of them are super filling. For example egg whites are
-        one of the most filling dishes I had and they are low in calories and high in protein. You can find egg whites liquid 
-        boxes\footnote{\href{https://twochicks.co.uk}{Two Chicks Egg Whites}} that you can cook straight in
-        the pan or make something like protein pancakes\footnote{\href{https://www.youtube.com/watch?v=aDJ8K_gqzdI}{Greg Doucette with Protein Pancakes on Youtube}}. 
-        I find a lot of high protein recipes online, mostly on YouTube. Examples of youtubers with such recipes: 
-        Greg Doucette\footnote{\href{https://www.youtube.com/playlist?list=PLNAZHiu0ASAprWRUxQHAiHG1FhlJbyeIm}{Greg Doucette's Anabolic Kitchen on Youtube}}        
-        (he also has a cookbook full of such recipes\footnote{\href{https://www.gregdoucette.com/products/cookbook-2}{Greg Doucette's Cookbook}}; haven't
-        tried it so I can't say if I recommend it or not), The Iron Musket\footnote{\href{https://www.youtube.com/channel/UC3Pec4Q-1CEc9WXjVk2z6Bg}{The Iron Musket on YouTube}}
-        (a lot of high protein ice creams recipes, as you can see in Figure \ref{fig5}),
-        Sam Does Fitness\footnote{\href{https://www.youtube.com/channel/UC8JUC4wItW2EwpeMkCSyRUw/}{Sam Does Fitness on YouTube}}, 
-        Remington James\footnote{\href{https://www.youtube.com/channel/UCO9Rhj_x_GgJl-Ria7257EA}{Remington James on YouTube}}, 
-        Will Tennyson\footnote{\href{https://www.youtube.com/channel/UCB2wtYpfbCpYDc5TeTwuqFA}{Will Tennyson on YouTube}} and many more.
+        one of the most filling dishes I had and they are low in calories and high in protein. You can find egg whites liquid boxes
+        \footnote{\href{https://twochicks.co.uk}{Two Chicks Egg Whites}} that you can cook straight in
+        the pan or make something like protein pancakes
+        \footnote{\href{https://www.youtube.com/watch?v=aDJ8K_gqzdI}{Greg Doucette with Protein Pancakes on Youtube}}. 
+        I find a lot of high protein recipes online, mostly on YouTube. Examples of youtubers with such recipes: Greg Doucette
+        \footnote{\href{https://www.youtube.com/playlist?list=PLNAZHiu0ASAprWRUxQHAiHG1FhlJbyeIm}{Greg Doucette's Anabolic Kitchen on Youtube}}        
+        (he also has a cookbook full of such recipes
+        \footnote{\href{https://www.gregdoucette.com/products/cookbook-2}{Greg Doucette's Cookbook}}; haven't
+        tried it so I can't say if I recommend it or not), The Iron Musket
+        \footnote{\href{https://www.youtube.com/channel/UC3Pec4Q-1CEc9WXjVk2z6Bg}{The Iron Musket on YouTube}}
+        (a lot of high protein ice creams recipes, as you can see in Figure \ref{fig5}), Sam Does Fitness
+        \footnote{\href{https://www.youtube.com/channel/UC8JUC4wItW2EwpeMkCSyRUw/}{Sam Does Fitness on YouTube}}, Remington James
+        \footnote{\href{https://www.youtube.com/channel/UCO9Rhj_x_GgJl-Ria7257EA}{Remington James on YouTube}}, Will Tennyson
+        \footnote{\href{https://www.youtube.com/channel/UCB2wtYpfbCpYDc5TeTwuqFA}{Will Tennyson on YouTube}} and many more.
 
 	\begin{figure}[h]
 		\centering
@@ -514,9 +536,10 @@
 
         Another struggle with diets are cravings. Not eating pizza in a long time would make me want a pizza slice so bad. The good news is that there are high protein
         alternatives to a lot of popular dishes you can cook, and they seem to kill cravings for me while on a diet, which is perfect! I can have protein pizza, protein
-        ice cream, even low fat peanut butter\footnote{\href{https://pbfit.com/}{PBfit, low fat alternative to peanut butter}} 
-         all while cutting. I can make a small pizza for less than 300 calories using 
-        Lo-Dough base\footnote{\href{https://lodough.co/}{Lo-Dough Website}} and EatLean cheese\footnote{\href{https://eatlean.com/}{EatLean Website}} that still tastes really
+        ice cream, even low fat peanut butter
+        \footnote{\href{https://pbfit.com/}{PBfit, low fat alternative to peanut butter}} all while cutting. I can make a small pizza for less than 300 calories using Lo-Dough base
+        \footnote{\href{https://lodough.co/}{Lo-Dough Website}} and EatLean cheese
+        \footnote{\href{https://eatlean.com/}{EatLean Website}} that still tastes really
         good and looks amazing (Figure \ref{fig6}).
 
 	\begin{figure}[h]
@@ -540,76 +563,82 @@
         in the evening so that I have some protein in my stomach when I go to bed. I also add creatine to this casein protein shake, which I will discuss later. You can also get casein naturally
         from cheese, which is made from milk after removing the whey protein.
 
-        Branched-chain amino acids (BCAAs)\footnote{\href{https://www.healthline.com/nutrition/bcaa}{BCAAs on Healthline}} --- proteins are made of amino acids. There's 20 different types of amino
-        acids out there. From these 20, we need only need 9 in our diet to be
-        healthy\footnote{\href{https://en.wikipedia.org/wiki/Protein\%E2\%80\%93energy\_malnutrition}{Protein-energy malnutrition on wikipedia}}. We normally get all of them from food
+        Branched-chain amino acids (BCAAs)
+        \footnote{\href{https://www.healthline.com/nutrition/bcaa}{BCAAs on Healthline}} --- proteins are made of amino acids. There's 20 different types of amino
+        acids out there. From these 20, we need only need 9 in our diet to be healthy
+        \footnote{\href{https://en.wikipedia.org/wiki/Protein\%E2\%80\%93energy\_malnutrition}{Protein-energy malnutrition on wikipedia}}. We normally get all of them from food
         high in protein such as milk, eggs, meat and so on. From these 9 amino acids, 3 of them are called branched-chain amino acids: leucin, isoleucine and valine. People say these 3 amino acids
         are better at building muscles than the other ones. Most protein powders already have them, for example both whey and casein proteins contain all 3 (they actually contain all 9, which is
         why they are called complete proteins). BCAA powder only has the 3 amino acids I mentioned. Personally I've never tried powders with BCAAs only and I don't know if it's better than having
         complete proteins such as whey or casein. I've also seen people claiming that BCAAs don't have calories, which is hard to believe since they are amino acids just like the other ones which
         make up proteins, and proteins do have calories!
 
-        Glutamine\footnote{\href{https://www.healthline.com/nutrition/glutamine}{Glutamine on Healthline}} --- this is another amino acid, making up proteins just like BCAAs. However Glutamine is
+        Glutamine
+        \footnote{\href{https://www.healthline.com/nutrition/glutamine}{Glutamine on Healthline}} --- this is another amino acid, making up proteins just like BCAAs. However Glutamine is
         not part of the 9 essential amino acids, it is only needed under certain circumstances (for example injury or illness). Glutamine is found in whey \& casein proteins too. You can also get
         it from certain types of food (eggs, milk). Glutamine has been shown to help with recovery. Again I never took glutamine by itself, just from foods and my whey and casein protein shakes.
 
-        Creatine\footnote{\href{https://www.healthline.com/nutrition/what-is-creatine}{Creatine on Healthline}} --- this is a supplement everyone believes to work. There have been studies
-        showing it works, every
-        bodybuilder\footnote{\href{https://www.youtube.com/watch?v=W9Kas49cNnU}{Greg Doucette on Supplements on YouTube}}\footnote{\href{https://www.youtube.com/watch?v=6Xj1MNJK-iA}{VitruvianPhysique on Supplements on YouTube}}
+        Creatine
+        \footnote{\href{https://www.healthline.com/nutrition/what-is-creatine}{Creatine on Healthline}} --- this is a supplement everyone believes to work. There have been studies
+        showing it works, every bodybuilder
+        \footnote{\href{https://www.youtube.com/watch?v=W9Kas49cNnU}{Greg Doucette on Supplements on YouTube}}
+        \footnote{\href{https://www.youtube.com/watch?v=6Xj1MNJK-iA}{VitruvianPhysique on Supplements on YouTube}}
         I watch also approves of it. I take it as well, however I can't say how much it helped me. When I started taking it I was doing a bulk, relatively
         early in my lifting career so I was increasing the weight I can lift in the gym quite frequently anyway. Creatine is stored inside your muscle, and it's used with glycogen and fat to produce
         adenosine triphosphate (ATP) which makes your muscle contract. You normally get it from various types of meat (tuna, steak) but you can also take it as a supplement. Some people say that
-        the amount you can get from food is not enough and supplements are needed for an optimal amount of creatine stores in your
-        muscles\footnote{\href{https://www.youtube.com/watch?v=sREg8GrkPio}{Athlean-X on Supplements on YouTube}}.
+        the amount you can get from food is not enough and supplements are needed for an optimal amount of creatine stores in your muscles
+        \footnote{\href{https://www.youtube.com/watch?v=sREg8GrkPio}{Athlean-X on Supplements on YouTube}}.
         Taking it as a supplement should help with ATP production, which should give you more strength and endurance in the gym.
         You can buy creatine in powder form and mix it in your drink. I normally take it after gym in the evening when I mix it with casein protein powder and unsweetened almond milk as my
-        post-workout drink. There's various theories on when it's best to take it (usually post
-        workout)\footnote{\href{https://www.healthline.com/nutrition/best-time-for-creatine}{When to take creatine on Healthline}}.
+        post-workout drink. There's various theories on when it's best to take it (usually post workout)
+        \footnote{\href{https://www.healthline.com/nutrition/best-time-for-creatine}{When to take creatine on Healthline}}.
         The recommended intake is 3-5g per day, which should be 1 scoop with the scoop provided in the package. It normally takes time for the creatine stores in your muscle
-        to increase from the supplement you take (around 2 weeks). This is why some bodybuilders do something called creatine
-        loading\footnote{\href{https://www.healthline.com/nutrition/creatine-loading-phase}{Creatine Loading on Healthline}} --- taking 20g of creatine every day for 5-7 days to speed up the process,
+        to increase from the supplement you take (around 2 weeks). This is why some bodybuilders do something called creatine loading
+        \footnote{\href{https://www.healthline.com/nutrition/creatine-loading-phase}{Creatine Loading on Healthline}} --- taking 20g of creatine every day for 5-7 days to speed up the process,
         then going back to 3-5g a day.
 
-        One thing worth mentioning about creatine is that it has been linked to
-        hair loss\footnote{\href{https://pubmed.ncbi.nlm.nih.gov/19741313/}{Article on creatine effects on DHT}}
+        One thing worth mentioning about creatine is that it has been linked to hair loss
+        \footnote{\href{https://pubmed.ncbi.nlm.nih.gov/19741313/}{Article on creatine effects on DHT}}
         \footnote{\href{https://www.youtube.com/watch?v=NgcfEMu_WSE}{VitruvianPhysique on Creatine and Hair Loss on Youtube}}.
-        Most guys will experience male pattern
-        baldness\footnote{\href{https://www.healthline.com/health/male-pattern-baldness}{Male pattern baldness on Healthline}} as they grow old. This happens because of testosterone (more specifically
+        Most guys will experience male pattern baldness
+        \footnote{\href{https://www.healthline.com/health/male-pattern-baldness}{Male pattern baldness on Healthline}} as they grow old. This happens because of testosterone (more specifically
         dihydrotestosterone or DHT) which gets attached to the hair follicle causing it to die out slowly. This normally happens with the hair on the top and not sides or back, since it's believed that
         the hair there is immune to DHT. In hair transplant operations, hair follicles from the back of the head are extracted and placed on the top, where they start growing again.
         There are also options to try and prevent the male pattern baldness from happening, which only works if you start using them before the hair follicle dies. If it died then 
-        the only solution is hair transplant. Some of these options include applying
-        minoxidil solution\footnote{\href{https://en.wikipedia.org/wiki/Minoxidil}{Minoxidil on Wikipedia}} on the top of your head, taking a pill called
-        Finasteride\footnote{\href{https://en.wikipedia.org/wiki/Finasteride}{Finasteride on Wikipedia}} and
-        others\footnote{\href{https://www.healthline.com/health/dht}{DHT article on Healthline}}. Before you take anything you should book a consulation with a doctor or hair loss specialist
+        the only solution is hair transplant. Some of these options include applying minoxidil solution
+        \footnote{\href{https://en.wikipedia.org/wiki/Minoxidil}{Minoxidil on Wikipedia}} on the top of your head, taking a pill called Finasteride
+        \footnote{\href{https://en.wikipedia.org/wiki/Finasteride}{Finasteride on Wikipedia}} and others
+        \footnote{\href{https://www.healthline.com/health/dht}{DHT article on Healthline}}. Before you take anything you should book a consulation with a doctor or hair loss specialist
         (there's other causes to hair loss than DHT, some of these meds have side effects etc).
         Back to the topic of creatine and hair loss, usually training in the gym will boost your testosterone. Any boost in testosterone can accelerate male pattern baldness. While creatine is linked
         to increase in testosterone, I assume that anything that helps you lift more weights should indirectly help increase testosterone so it's not really a surprise.
         Personally I haven't noticed hair loss after I started using it, but I do use minoxidil every day.
 
         Multivitamins --- a lot of people recommend taking multivitamins. Working out weakens your immune system right after exercise
-        (T-cell production drops for up to 6h, after which it should return to normall)\footnote{\href{https://pubmed.ncbi.nlm.nih.gov/17037088/}{Article on immune system response to exercise}}.
-        This time interval in which your immune system is weakened is also called the \textit{open window}\footnote{\href{https://pubmed.ncbi.nlm.nih.gov/20839496/}{Article on open
-          window after intense exercise}} and you are more likely to get sick during this time.
+        (T-cell production drops for up to 6h, after which it should return to normall)
+        \footnote{\href{https://pubmed.ncbi.nlm.nih.gov/17037088/}{Article on immune system response to exercise}}.
+        This time interval in which your immune system is weakened is also called the \textit{open window}
+        \footnote{\href{https://pubmed.ncbi.nlm.nih.gov/20839496/}{Article on open window after intense exercise}} and you are more likely to get sick during this time.
         Multivitamins pills are known to help the immune system, which is one of the reasons they are recommended. If you manage to take your daily intake of vitamins and minerals from food I think
         you should be fine.
         However, I find it harder to track what vitamins and minerals I eat in a day, so I'm taking multivitamins pills daily.
 
-        Omega 3 --- this usually comes from fish oil. It is believed that fish oil should help with recovery (e.g. joint recovery, inflamations). It's also recommended for a lot of different
-        reasons\footnote{\href{https://www.healthline.com/nutrition/fish-oil-bodybuilding}{Fish oil on Healthline}}. I personally eat fish almost every day, and when I don't, I take
+        Omega 3 --- this usually comes from fish oil. It is believed that fish oil should help with recovery (e.g. joint recovery, inflamations). It's also recommended for a lot of different reasons
+        \footnote{\href{https://www.healthline.com/nutrition/fish-oil-bodybuilding}{Fish oil on Healthline}}. I personally eat fish almost every day, and when I don't, I take
         omega 3 supplements in form of pills.
 
-        Glucosamine Chondroitin\footnote{\href{https://www.healthline.com/nutrition/glucosamine}{Glucosamine on Healthline}} --- this supplement is supposed to help with inflamations from exercise.
+        Glucosamine Chondroitin
+        \footnote{\href{https://www.healthline.com/nutrition/glucosamine}{Glucosamine on Healthline}} --- this supplement is supposed to help with inflamations from exercise.
         I had a tendon inflamation in my right arm and tried this supplement in the form of pills and it did nothing to help me recover. There is information out there that it should help with
         the healing of tendons, however that was not the case for me. The only thing that helped me recover was a long absence from working out.
 
         Pre-workout drinks --- you must've seen pre-workout powders in shops. They are supposed to help you get energized before a workout. As such, they usually contain high amounts of caffeine
-        (the equivalent of 2-3 cups of coffee for the weaker ones, and even more for the stronger ones). They also have other stuff in them, such as creatine, carbs,
-        beta-alanine\footnote{\href{https://www.healthline.com/nutrition/beta-alanine-101}{Beta-alanine on Healthline}},
-        citrulline\footnote{\href{https://www.healthline.com/nutrition/citrulline-supplements}{Citrulline on Healthline}} and so forth. I personally don't take pre-workout, running on the treadmill
+        (the equivalent of 2-3 cups of coffee for the weaker ones, and even more for the stronger ones). They also have other stuff in them, such as creatine, carbs, beta-alanine
+        \footnote{\href{https://www.healthline.com/nutrition/beta-alanine-101}{Beta-alanine on Healthline}}, citrulline
+        \footnote{\href{https://www.healthline.com/nutrition/citrulline-supplements}{Citrulline on Healthline}} and so forth. I personally don't take pre-workout, running on the treadmill
         before doing my workout wakes me up and puts me in the mood to exercise. I also consume a large amount of coffee each day, so adding the caffeine from pre-workout will be bad for my health.
-        If you struggle to get motivation to workout then maybe pre-workouts are for you. You can read more about pre-workout supplements at
-        healthline\footnote{\href{https://www.healthline.com/nutrition/best-pre-workout-supplements}{Pre-workout supplements at Healthline}}.
+        If you struggle to get motivation to workout then maybe pre-workouts are for you. You can read more about pre-workout supplements at healthline
+        \footnote{\href{https://www.healthline.com/nutrition/best-pre-workout-supplements}{Pre-workout supplements at Healthline}}.
 
         Intra-workout drinks --- not as famous as pre-workout, but some people use them too. Intra-workout means you have to drink it while you exercise. I get the idea of drinking something every 30min
         if your workout is too long. As previously discussed, if you perform high intense activity such as lifting weights, your body will use glycogen for energy, which will deplete the glycogen stores
@@ -620,8 +649,8 @@
         I just want to reiterate again with what supplements I use: whey protein powder in the morning, casein protein powder in the evening, creatine, multivitamins and if I don't eat any fish
         in a day I also take omega 3 capsules. Because I sweat a lot I end up
         losing a lot of sodium when exercising. I noticed that drinking water with a bit of salt (or stock cubes) makes me feel better
-        than drinking plain water, although I don't consider this a supplement. There is also a website that claims to help with info on supplements ---
-        examine.com\footnote{\href{https://examine.com/}{Examine website}}.
+        than drinking plain water, although I don't consider this a supplement. There is also a website that claims to help with info on supplements --- examine.com
+        \footnote{\href{https://examine.com/}{Examine website}}.
         I'm listing all the supplements discussed in this section as a list, for easier referencing:
 
 	\begin{enumerate}
@@ -640,11 +669,12 @@
 
         I've already discussed performance enhancing drugs (PEDs) in the previous section, since the definition is a bit broad: anything that gives you a mental or physical edge while exercising or
         competing. To that extent even caffeine or creatine are PEDs. However, when people in the fitness industry talk about PEDs they usually refer to either anabolic steroids or selective androgen
-        receptor modulators (SARMs) which I will discuss in the next sections. Personally I've never tried any of these but I will try to describe what I've heard and read about them.
-        Both steroids and SARMs have been used with great results: you are able to build muscles much quicker while cutting down fat
+        receptor modulators (SARMs) which I will discuss in the next sections. Personally I've never tried any of these but I will describe what I've heard and read about them.
+        Both steroids and SARMs have been used with great results: expect to gain muscles at least 5 times faster than training natural, all while cutting down fat
         \footnote{\href{https://www.reddit.com/r/nattyorjuice/comments/c0mak1/physique_before_usage_of_the_steroids_is/}{Example of anabolic steroid transformation in 20 weeks}}.
         They are commonly used in bodybuilding competitions to make the competitors bigger and leaner at the same time. However, they can have serious side-effects, including death. In fact quite a lot
-        of bodybuilders have died because of too much steroid use\footnote{\href{https://fitnessvolt.com/bodybuilder-deaths-heart-attack/}{21 Bodybuilders who Died of Heart Attacks}}.
+        of bodybuilders have died because of too much steroid use
+        \footnote{\href{https://fitnessvolt.com/bodybuilder-deaths-heart-attack/}{21 Bodybuilders who Died of Heart Attacks}}.
         The reasons people usually decide to use PEDs are
 
 	\begin{enumerate}
@@ -671,31 +701,46 @@
 	\end{enumerate}
 
         Since both steroids and SARMs increase testosterone in the body, your body will start producing less testosterone naturally. As a result for guys, the testicles will start to shrink, which could
-        lead to impotence. What people usually do is to have cycles of steroid use for around 8 weeks, followed by a post cycle therapy (PCT) of 4 weeks. During PCT you make sure your body will go back
-        to producing testosterone in normal levels. Since it takes some time for your testosterone levels to go back to normal, you might feel like crap in the meantime --- no strength, depression,
+        lead to impotence. This is also why testosterone is used as a male contraceptive since it reduces sperm count
+        \footnote{\href{https://www.webmd.com/sex/birth-control/news/20090506/testosterone-tested-as-male-contraceptive}{Testosterone as a male contraceptive on WebMD}}.
+        What people usually do to avoid this and other permanent damages is to have cycles of steroid use for around 8 weeks, followed by a post cycle therapy (PCT)
+        \footnote{\href{https://musclerage.co.uk/supplements-blog/pct-a-comprehensive-guide-to-post-cycle-therapy-2020/}
+        {Website on PCT}}
+        of 4 weeks. During PCT you make sure your body will go back to producing testosterone in normal levels. This usually means just taking a bunch of medication to help your body get back
+        to normal, such as: Tamoxifen (Nolvadex, 20mg a day), testosterone boosters (e.g. Metatest from Metabolic Nutrition or InnovaPharm Stage 1), human chorionic gonadotropin (hCG),
+        Clomifene (Clomid, 50mg every day), Letrozole (Femara). Most of these are available on doctor prescription only. Tamoxifen is used for light cycles, that are short in length and with low
+        dosage, for example a PCT with Tamoxifen could mean taking 30mg a day for the first week, 20mg a day for the second, 10mg for the last one (first week is 1 week after end of cycle).
+        hCG is used for stronger cycles, that take longer than 8 weeks and with higher dosage of substances. This is a solution you have to inject. An example of hCG PCT is doing 1,000 units
+        on the first day, take a day off, another 1,000 units, another day off, 750 units, day off, 750, off, 500 and so on until the whole 5,000 vial is finished (you will need
+        Tamoxifen as well afterwards).
+        Since it takes some time for your testosterone levels to go back to normal, you might feel like crap during PCT --- no strength, depression,
         no sex drive, you lose muscle mass etc. It's considered good if you manage to keep at least half the muscle mass you gained while on cycle.
-        Another common side effect is an increased level of estrogen in the body. This happens because some testosterone is converted to estrogen in a process
-        called Aromatization\footnote{\href{https://www.blaineywellness.com/wp-content/uploads/2016/08/testosterone-and-aromatization-how-to-avoid-excess-estrogrogen-production.pdf}
+        
+        Another common side effect is an increased level of estrogen in the body. This happens because some testosterone is converted to estrogen in a process called Aromatization
+        \footnote{\href{https://www.blaineywellness.com/wp-content/uploads/2016/08/testosterone-and-aromatization-how-to-avoid-excess-estrogrogen-production.pdf}
         {Testosterone and Aromatization: How To Avoid Excess Estrogen Production}} that keeps hormonal levels in balance. This will cause men to develop breast tissue just like women, and get 
-        \textit{puffy} nipples, as seen in Figure \ref{fig7}.
+        \textit{puffy} nipples, as seen in Figure \ref{fig7}. To avoid these problems people usually take aromatase inhibitors (AIs) like Aromasin (Exemestane) --- 12.5mg once a day, or
+        Arimidex (Anastrozole) --- 0.5mg once a day, or even hCG.
 
 	\begin{figure}[h]
 		\centering
 		\includegraphics[scale=0.5]{gyno.jpg}
-		\caption{Example of gyno on bodybuilder - look at the nipple area}
+		\caption{Example of gyno on bodybuilder - look at the nipple area. Picture taken from twitter}
 		\label{fig7}
 	\end{figure}
 
         One last common side-effect is an enlarged heart (cardiomegaly). This can lead to heart failure and as I previously mentioned there's quite a few bodybuilders who died because of this
         \footnote{\href{https://www.menshealth.com/trending-news/a19541843/bodybuilder-rich-piana-autopsy-report/}{Article on Rich Piana's death}}
         \footnote{\href{https://www.dailytelegraph.com.au/news/nsw/bodybuilder-aziz-zyzz-shavershian-killed-by-heart-defect/news-story/57bbadf89f78c5d678d4df0c5b35d0d5}
-        {Zyzz dies from heart attack}}
-
-        Even with all these serious side-effects, a lot of people do end up using steroids or SARMS. In fact, most bodybuilders who compete use them and a lot of fitness '\textit{influencers}'
+        {Zyzz dies from heart attack}}.
+        
+        Even with all these serious side-effects, a lot of people do end up using steroids or SARMS. In fact, most bodybuilders who compete use them
+        \footnote{\href{https://www.youtube.com/watch?v=k8mBn3Dp7h4}{Brandon Harding - good example of what he's using to compete on Youtube}}
+        and a lot of fitness ``\textit{influencers}''
         you see on instagram use them as well. Even actors who prepare to play certain muscular characters are using them. If you do decide to use them, it probably makes sense to talk to a
-        doctor first and get your blood tested throughout the process. You might also want to take supplements to protect your liver, heart etc.
+        doctor first and get your blood tested throughout the process. You might also want to take supplements to protect your liver, heart etc
         \footnote{\href{https://www.htltsupps.com/collections/capsules/products/liver-support/}{Liver support supplements from HTLT Supps}}
-        \footnote{\href{https://theanabar.com/products/shield?variant=33058384969837/}{Shield from Anabar}}
+        \footnote{\href{https://theanabar.com/products/shield?variant=33058384969837/}{Shield from Anabar}}.
 
         One last point to make about steroids and SARMs is that they are illegal in a lot of countries, so people might buy them from dealers in the gym or from edgy websites. This usually means
         that you might not be getting what you paid for. It also makes them rather expensive. There was a study done where they bought SARMs from various websites selling them and the result was that
@@ -708,14 +753,14 @@
         Before talking more about anabolic steroids and SARMS, I just want to give a brief overview of testosterone. I mentioned before that testosterone plays an important role in building muscles.
         Testosterone is the male sex hormone, it's produced by testicles for men and ovaries for women (women have testosterone too, just in much lower quantities).
         The amount of testosterone in your body is measured in $ng/dL$, although sometimes you can find $nmol/L$ which can be converted to $ng/dL$ by multiplying the value with $28.85$.
-        The average male has between 300 and 1,000 $ng/dL$ while for women it's only between 15 and 70 $ng/dL$. The amount of testosterone your body produces also declines with age, but not
-        by much\footnote{\href{https://pubmed.ncbi.nlm.nih.gov/25295520/}{Article showing testosterone levels versus age for men}}. If the testosterone production gets too low it's possible to
+        The average male has between 300 and 1,000 $ng/dL$ while for women it's only between 15 and 70 $ng/dL$. The amount of testosterone your body produces also declines with age, but not by much
+        \footnote{\href{https://pubmed.ncbi.nlm.nih.gov/25295520/}{Article showing testosterone levels versus age for men}}. If the testosterone production gets too low it's possible to
         do testosterone replacement therapy (TRT)
-        \footnote{\href{https://www.healthline.com/health/trt/}{TRT on Healthline}}, which is similar to taking anabolic steroids, but in much lower doses.
-        
-        If you want to know your level you need to get a blood test. For this you can talk to your doctor or check online (for example let's get checked
+        \footnote{\href{https://www.healthline.com/health/trt/}{TRT on Healthline}}, which is similar to taking anabolic steroids, but in much lower doses. TRT could also be prescribed if
+        you have Osteoporosis (fragile bones) since testosterone increases bone density.
+        If you want to know your testosterone level you need to get a blood test. For this you can talk to your doctor or check online (for example let's get checked
         \footnote{\href{https://www.letsgetchecked.co.uk/}{Let's Get Checked website}}
-        provides these type of services, however it's rather expensive and cheaper to do it with your doctor)
+        provides these type of services, however it's rather expensive and cheaper to do it with your doctor).
 
         \subsection{Anabolic Steroids}
 
@@ -725,32 +770,192 @@
         \footnote{\href{https://www.youtube.com/watch?v=UKcEHtm8MFA}{VitruvianPhysique on Testosterone on Youtube, Part II}}
         (compared to the 1,000 upper limit I previously mentioned). 
 
-        https://en.wikipedia.org/wiki/Testosterone_(medication)
-        https://www.healthline.com/health/anabolic-steroids#use
-        https://www.healthline.com/health/trt#non-medical-use
-        https://www.webmd.com/men/guide/testosterone-replacement-therapy-is-it-right-for-you
+        The history of artificial testosterone is interesting: it was first synthesized (created in a lab) in 1935 and available to the medical community for experimentation and
+        treatment purposes.
+        \footnote{\href{http://denverhormonehealth.com/history-of-testosterone-new/}{History of testosterone article}}
+        \footnote{\href{https://www.youtube.com/watch?v=C88Cn9e1UGM}{Nick's Strength and Power on The History of Steroids in Bodybuilding on Youtube}}
+        At first you could only inject it but eventually tablets were made that you can take orally. Currently there's a lot of variations of anabolic steroids you can take, each with pros and cons.
+
+        The injectable ones come in the form of esters (oil characteristics) which can be either longer esters that have to be injected less times a week (usually twice a week) and shorter esters which have
+        to be injected at least 3 times per week. This characteristic comes from how long the ester stays in your body, which is also referred to as the half-life
+        \footnote{\href{https://en.wikipedia.org/wiki/Biological_half-life}{Biological half life on Wikipedia}}.
         
-        Anabolic steroids:
-        oral: anadrol (oxymetholone), oxandrin (oxandrolone),
-           dianabol (methandrostenolone), winstrol (stanozolol)
+        When talking about steroids, people talk about anabolic and androgenic effects. Anabolic is about gaining muscle while androgenic is about male characterstics such as deep voice, facial hair etc.
+        Different steroids have different anabolic and androgenic effects.
 
-        injectable: deca-durabolin (nandrolone decanoate),
-        durabolin (nandrolone phenpropionate),
-        depo-testosterone (testosterone cypionate),
-        equipoise (boldenone undecylenate)
-        tetrahydrogestrinone (THG)
+        Anabolic steroids are usually classified based on the type of testosterone they are derived from: DHT, Testosterone or Nandrolone as seen in Figure \ref{fig8}.
+        Usually DHT steroids don't get converted to estrogen, which means less estrogen problems (although you can still see estrogen levels increasing), but they will accelerate hair loss,
+        mess up cholesterol levels, are bad on kindeys and other common steroid side effects. They are most commonly used for cutting down since you don't store as much fat on them.
+        Testosterone derivatives will normally store more fat, since they convert to estrogen. Finally Nandrolone derivatives are really strong on both anabolic and androgenic scale, giving you a lot of
+        mass gain but a lot of side effects as well.
+        I will try to give a bit of information on a few steroids below
 
-        androstenedione, axiron, and fortesta
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.25]{steroids.png}
+		\caption{Classification of Anabolic Steroids. Picture taken from moreplatesmoredates.com}
+		\label{fig8}
+	\end{figure}
 
-        human growth hormone (hgh) - serious side effects
+	\begin{enumerate}
 
-        blood doping - increase vo2max / one's oxygen carrying
-        capacity => it does improve performance (cyclists do it)
+		\item Testosterone
+                  \footnote{\href{https://www.youtube.com/watch?v=SMaLWzRCmSA/}{Greg Doucette on first testosterone cycle}}
+                  \footnote{\href{https://www.youtube.com/watch?v=kIkSrgsIDcY/}{Ryan Ankrom on Testosterone}}
+                  --- this is synthetically made testosterone that comes as an oil in a bottle from which you have to inject multiple times a week. There's 2 main versions of it:
+                  cipyonate (depo-testosterone) which is a long ester, meaning you have to inject twice a week, and enanthate which is also a long ester. There is also a third type --- propionate
+                  which is a short ester that you have to inject 3 times a week, but it's not as common. People would use around 500mg a week (maybe less, 250 if first cycle), so this means 250mg per
+                  injection twice a week. You get all the problems that come with steroids.
+                    
+		\item Anavar
+                  \footnote{\href{https://www.youtube.com/watch?v=J4t4BeQaL8g}{Greg Doucette on Anavar}}
+                  \footnote{\href{https://www.youtube.com/watch?v=9A2z7i9yP_4}{Ryan Ankrom on Anavar}}
+                  (Oxandrolone is the real name, Anavar is just the brand name) --- oral steroid, one of the safer anabolic steroids out there, less strong than other steroids but really expensive
+                  (could be more than \$300 for only one cycle). Part of the DHT family so it speeds up hair loss.
+                  It's high on the anabolic scale and low on the androgenic scale (popular among women). One of the most popular steroids out there overall.
+                  In theory expect to get results 2 - 10 times faster than being natural. Highly likely to be fake when buying since it's so expensive.
+                  It's not aromatized into estrogen, so estrogen levels should stay normal.
+                  It has a short half-life so people take it twice a day. Men use around 50mg (25mg x 2) a day and women around 5mg a day.
 
-        DHEA
+		\item Trenbolone
+                  \footnote{\href{https://www.youtube.com/watch?v=tIvJh53jVfY/}{Greg Doucette on Trenbolone}}
+                  (or commonly known as Tren) --- injectable. Probably one of the strongest steroids out there, stronger than pure testosterone (in theory 5 times stronger).
+                  Part of the Nandrolone family. It's commonly used in cattle to improve strength.
+                  It has really bad side effects: it can screw up cholesterol, bad on kidneys, gives insomnia, hair loss, anger issues, impotence. You can find it in multiple
+                  variations such as acetate or enanthate but the most common one is acetate (Tren Ace). Men use around 30mg a day.
+
+		\item Winstrol
+                  \footnote{\href{https://www.youtube.com/watch?v=wH0A95aktLo}{Ryan Ankrom on Winstrol}}
+                  (Stanozolol) --- oral steroid, derived from DHT as well. Used for cutting down. It messes up cholesterol, increases liver toxicity. Does not convert into estrogen.
+                  Men use around 40mg a day (20mg x 2).
+
+		\item Halotestin
+                  \footnote{\href{https://www.youtube.com/watch?v=W8Gghg6vvuU}{Ryan Ankrom on Halotestin}}
+                  (Halo) --- available both orally or as injection. The oral version is more popular. It's a really strong steroid with strong side-effects. It's commonly known for a great increase in
+                  aggression, so people use it for strongmen competitions or before training or fighting. It also helps with strength. As side effects it increses hair loss a lot, it's really hard on the liver
+                  and every other side effect of steroids. Men use only 10mg a day.
+
+		\item Masteron (Drostanolone propionate) --- injectable, from DHT, usually used for cutting down.
+
+		\item Deca-Durabolin (Nandrolone Decanoate, commonly known as Deca) --- apparently best bulking steroid, it makes you gain a lot of mass, including water and fat at the same time.
+
+		\item Anadrol (Oxymetholone) --- strongest oral steroid, supposedly stronger than testosterone. It comes with a lot of side effects. Even if it doesn't convert to estrogen, it still
+                  makes you gain water \& fat.
+                  
+		\item Dianabol (Methandrostenolone, Dbol) --- second strongest oral steroid, aromatizes into a stronger estrogen so it needs strong AIs.
+
+	\end{enumerate}
+
+        There's a lot more other anabolic steroids that I won't cover: Equipoise (Boldenone Undecylenate), Proviron (Mesterolone), Turinabol (Tbol), Durabolin (Nandrolone Phenpropionate),
+        Tetrahydrogestrinone (THG) etc. Bodybuilders tend to use multiple steroids at the same time while doing a cycle --- this technique is called stacking.
+        A stack is all the substances someone takes every day while on cycle. You might see videos with bodybuilders sharing the stack they used before a contest.
+
+        \FloatBarrier
+        
+        \subsection{Selective Androgen Receptor Modulators (SARMs)}
+
+        SARMs are chemical substances similar to anabolic steroids that will try to keep the anabolic effects of steroids while minimizing the androgenic effects.
+        They are relatively new chemicals, invented in the late 1990s, and they are an attempt at making a substance that can get the muscle mass increase without
+        any of the androgenic side effects (deep voice, hair loss, facial hair, conversion to estrogen etc).
+        Androgen receptors are responsible for many of the male characteristics. Normally they get activated when an androgen such as testosterone
+        binds to them. Anabolic steroids are also androgens that will bind to these receptors, that's why they give you androgenic features.
+        SARMs are selective androgens that will only bind on receptors responsible for muscle growth, hence why they are called selective. In theory this sounds like a magic pill
+        that helps you build muscle with no side effects. However, this is not the case. They are still androgens which will signal your brain to produce less testosterone, which
+        leads to impotence. Also, they seem to increase blood \& liver toxicity as well since they are taken by mouth. When doing SARMs people do cycles and PCTs afterwards, similar to steroids.
+        Only 4 SARMs have been tested on humans: Ostarine (GTx-024, MK-2866), LGD-4033 (Ligandrol, VK5211)
+        GSK2881078, PF-06260414 (with bad side effects, such as headaches, decreased appetite, dizziness, upper respiratory infection, fatigue, and anxiety).
+        Since they are new they are legal to sell for research purposes only, that's why there's so many online shops out there selling them. I previously mentioned that a lot of thesse
+        products don't containt what they say they do. I will give a bit of information on a few SARMs below
+
+        \begin{enumerate}
+		\item RAD-140 (Testolone)
+                  \footnote{\href{https://www.youtube.com/watch?v=RAiR9vwJM7Y/}{Ryan Ankrom on RAD-140}}
+                  \footnote{\href{https://www.youtube.com/watch?v=INFn1w18bcc/}{Greg Doucette on multiple SARMs}}
+                  --- oral administration. One of the safer SARMs out there but more expensive. It's really strong, close to testosterone in strength. 
+                  Men normally use 20mg once a day (half-time of 20h). For PCT people use Tamoxifen or hCG if bigger dose was used.
+		\item Ostarine (MK-2866)
+                  \footnote{\href{https://www.youtube.com/watch?v=Rl676k-rf\_M/}{Ryan Ankrom on Ostarine}}
+                  --- originally designed as Osteoporosis \& muscle wasting treatment. It's less strong than RAD-140, usually good for cutting. It's supposed to help
+                  with joint \& tendon problems. Some people mentioned it helps with cholesterol and blood glucose levels. Men use around 15mg once a day (half-life of 24h).
+		\item LGD-4033 (Ligandrol, VK5211)
+                  \footnote{\href{https://www.youtube.com/watch?v=Ha7gSG0lCGw/}{Ryan Ankrom on LGD-4033}}
+                  --- really strong SARM, stronger than RAD-140. It's good for bulking, but does not help with fat loss. It's also less safe (most suppressive SARM, which could lead
+                  to impotence) than RAD-140 or Ostarine, but cheaper. Long half-life of 24-36h, men usually take 10mg once a day.
+		\item S4 (Andarine)
+                  \footnote{\href{https://www.youtube.com/watch?v=1e4jVHNUnn8/}{Ryan Ankrom on S4}}
+                  --- less strong than other SARMs, usually good for a dry look \& vascularity. It has vision side effects, you can start seeing a yellow tint.
+                  Men usually take between 25 and 50mg a day.
+        \end{enumerate}
+
+        Other SARMs I won't cover: S-23, ACP-105, LGD-3303, YK-11.
+
+        \subsection{Other PEDs}
+
+        Human growth hormone (HGH) --- this is a hormone responsible for growth in children. You can buy synthetic HGH that has to be injected (prescription only). 
+        It's often stacked with steroids by bodybuilders when doing a cycle.
+        This is a really expensive substance, you can pay up to \$5,000 a month for it, and the benefits are not that significant.
+        \footnote{\href{https://www.youtube.com/watch?v=5F7m8RHf2ZA/}{Greg Doucette and Iain Valliere on HGH}}
+        One of the key benefits of growth hormone is faster recovery, as well as less joint problems.
+        It also comes with bad side effects if used in higher doess, such as heart problems and acromegaly (a condition where bones grow too big, causing deformations).
+        When sold, people advertise it as an ``anti-aging'' drug, which makes it popular, however none of these claims are actually proven and it's considered one of the
+        most overrated PEDs out there
+        \footnote{\href{https://www.webmd.com/fitness-exercise/human-growth-hormone-hgh}{HGH on WebMD}}. Another PED that helps with HGH is
+        MK-677 (Ibutamoren). This is a growth hormone secretagogue, which means it's not a GH itself, but rather it tells your body to produce more GH. It's usually mistaken
+        for a SARM. People who used it
+        \footnote{\href{https://www.youtube.com/watch?v=sXNnRQh4grU}{Ryan Ankrom on MK-677}}
+        reported increased hunger (which is not ideal for cutting) and skin improvements. Men use around 5mg a day of MK-677.
+
+        Turkesterone
+        \footnote{\href{https://www.youtube.com/watch?v=zwlHwlOLW9Q}{VitruvianPhysique on Turkesterone}}
+        \footnote{\href{https://www.youtube.com/watch?v=T2QKWjEYZqY}{Greg Doucette on Turkesterone}}
+        --- this is an ecdysteroid, a substance found in insects and plants that is similar in structure to testosterone, with similar effects. There's been a few studies about this,
+        some suggest it doesn't do anything and others suggest that it might help with muscle growth
+        \footnote{\href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4447764/}{Ecdysteroids: A novel class of anabolic agents?}}.
+        Turkesterone gained a lot of popularity recently since a few famous youtubers started promoting it.
+        People who tried it reported that it does work but mostly just helping with strength, a bit similar to creatine but a little more powerful.
+        \footnote{\href{https://www.youtube.com/watch?v=zwlHwlOLW9Q}{VitruvianPhysique on Turkesterone}}
+        Currently it's really expensive and it might not be worth it for the benefits it gives.
+
+        Fat burners --- I'm first going to talk about over the counter fat burner pills
+        \footnote{\href{https://www.amazon.co.uk/Bullets-K-CYTRO-Weight-Management-Supplement/dp/B08N43P8S3/}{Example of fat burner pills on amazon}}.
+        Contrary to what the name suggests, these don't actually burn fat but rather suppress appetite. They usually contain a combination of ephedrine, caffeine and
+        aspirin (ECA stack
+        \footnote{\href{https://www.healthline.com/health/eca-stack}{ECA stack on Healthline}}). I've never tried a fat burner before, but I did notice coffee suppresses hunger for me,
+        which is why I find it easier to do something like intermittent fasting where I don't eat anything in the morning and just have coffee.
+        There are also substances that actually help burning fat, but these ones are not approved for human consumption. The first example is GW-501516 (Cardarine)
+        \footnote{\href{https://www.youtube.com/watch?v=XrNZIO2k06I}{Ryan Ankrom on GW-501516}}
+        \footnote{\href{https://www.youtube.com/watch?v=dbBOWljeLiw}{Greg Doucette on GW-501516}}
+        which is commonly mistaken for a SARM. It helps a lot with endurance by making cardio super easy.
+        It does so by making your body better at burning fat
+        rather than glycogen. It should also increase your BMR, making you burn extra calories in a day without doing anything.
+        However there was a study about it where it was found to cause cancer in rats, but the doses administered were 50 times the normal dose and for 2 years at a time.
+        People use around 20mg a day. Similar substances to GW-501516 are SR-9009 and SR-9011, both with promising results for fat loss.
+
+        Clenbuterol
+        \footnote{\href{https://www.webmd.com/pain-management/what-you-need-to-know-about-clenbuterol-for-bodybuilding}{Clenbuterol on WebMD}}
+        --- this is also a fat burner that works really well, with serious side-effects such as heart problems and even death.
+        Some people claim it's more dangerous than steroids, at least in high doses.
+        It works by increasing your body temperature and making thermogenesis burn more calories (so it increases your BMR).
+        It also lowers appetite. People take anything between 10 and 120mcg a day. It's often used in combination with T3 (brand name Tiromel),
+        which is another substance that increases metabolism in the body. 
+
+        Fragment 176-191
+        \footnote{\href{https://www.youtube.com/watch?v=8Hp1ExYShKI}{Greg Doucette on Frag 176-191}}
+        \footnote{\href{https://www.youtube.com/watch?v=e4pnPjw2exE}{Ryan Ankrom on Frag 176-191}}
+        --- another fat burner, probably the strongest out there. The only downside is that you have to inject it (under the skin).
+        It's part of the growth hormone responsible for burning fat. People would use between 300 and 1,000mcg a day, for up to 6 weeks (slowly increase the dose, since
+        your body gets used to it), usually right before a contest to get down one extra body fat \%. There's no known serious side-effects.        
 
         Diuretics
+        \footnote{\href{https://www.healthline.com/health/diuretics}{Healthline Article on Diuretics}}
+        --- these are pills that will make you lose water via urine. They are mostly used for contests to get a leaner look right before the event, since water is stored between skin and muscles. Also
+        people use them to make weight for a specific class since you can lose up to 1-2 kg of water with these pills (even outside bodybuilding, in martial arts for example). They come with side-effects
+        such as dizziness, muscle cramps and even kidney failure.
 
-        Ephedrine
+        Blood doping
+        \footnote{\href{https://www.webmd.com/fitness-exercise/blood-doping}{Blood doping on WebMD}}
+        --- this is a technique mostly used by cyclists to be able to perform better in competitions. You can increase oxygen carrying capacity to the muscle ($VO_2max$
+        \footnote{\href{https://en.wikipedia.org/wiki/VO2_max}{$VO_2max$ on Wikipedia}}) by increasing the amount of
+        hemoglobin in the bloodstream, for example by injecting erythropoietin (EPO). This will improve endurance when exercising.
         
 \end{document}
