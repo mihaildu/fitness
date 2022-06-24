@@ -2,5 +2,7 @@
 book:
 	pdflatex -output-directory out src/fitness-book.tex
 	pdflatex -output-directory out src/fitness-book.tex
+spell:
+	aspell -c src/fitness-book.tex
 clean:
 	rm out/*
