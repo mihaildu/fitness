@@ -1,2 +1,2 @@
 # fitness
-Fitness notes
+Fitness stuff
